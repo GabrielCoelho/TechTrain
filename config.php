@@ -3,8 +3,6 @@
 use Project\Controller\TabelaController;
 $tabelaController = new TabelaController();
 
-use Project\Controller\TesteController;
-$TesteController = new TesteController();
 
 //configuração do banco de dados
 $_ENV['config'] = [
