@@ -1,0 +1,15 @@
+{
+    "name": "binho/project",
+    "authors": [
+        {
+            "name": "bmarchete",
+            "email": "bmarchete@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Project\\" : "app"
+        }
+    }
+}
