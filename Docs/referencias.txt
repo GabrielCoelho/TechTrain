@@ -1,0 +1,15 @@
+URL Uniform Resource Locator em português Localizador Padrão de Recurso 
+sempre falar na ordem: 1 – Definição / 2 – História / 3 – Evolução 
+GPL (General Public License, Licença Pública Geral)
+API (Application Programming Interface, Interface de Programação de Aplicativos)  Win32 e usa a STL (Standard Template Library em português, Biblioteca Padrão de Gabaritos).
+http://www.guiadopc.com.br/analises/20307/notepad-plus.html
+https://pt.wikipedia.org/wiki/Notepad%2B%2B
+http://www.trabalhosfeitos.com/ensaios/notepad/48530331.html
+STL (Standard Template Library em português, Biblioteca Padrão de Gabaritos).
+UML é um acrônimo para a expressão Unified Modeling Language que significa Linguagem Unificada de Modelagem.
+
+OMT (Object Modelling Tool – ferrameta de modelagem de objeto) 
+Fonte:http://www.trabalhosfeitos.com/ensaios/o-Sql-e-a-Sua- Evolu%C3%A7%C3%A3o/53424161.html 
+https://endeavor.org.br/sql/
+http://www.diegonogare.net/2012/09/evolucao-do-sql-server-da-versao-2000-ate-a-2012/ 
+http://blog.fabianobento.com.br/2010/12/mariadb/

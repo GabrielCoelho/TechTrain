@@ -1,0 +1,27 @@
+referencias TCC
+			http://www.pinceladasdaweb.com.br/blog/2007/10/15/quais-sao-as-versoes-do-html/
+referencias de servidor https://pt.wikipedia.org/wiki/Servidor
+servidor web   		https://pt.wikipedia.org/wiki/Servidor_web
+servidor local		https://pt.wikipedia.org/wiki/Rede_de_%C3%A1rea_local
+			https://www.oficinadanet.com.br/artigo/servidores/o_que_e_um_servidor_web
+linguagem de programaçao - http://historiadaslinguagensdeprogramacao.blogspot.com.br/
+http://www.okconcursos.com.br/apostilas/apostila-gratis/130-informatica-para-concursos/1689-linguagem-de-programacao#.WROSAVXyuM8
+
+PHP  http://www.infoescola.com/informatica/php/
+http://php.net/manual/pt_BR/faq.general.php
+https://secure.php.net/manual/pt_BR/intro-whatcando.php
+
+http://www.inf.ufsc.br/~vania.bogorny/teaching/ine5231/Logica.pdf
+servidor
+https://hbueno.wordpress.com/2009/04/29/virtualizacao-um-pouco-de-historia/
+abril 29, 2009  Robert P. Goldberg, 
+
+http://www.matera.com/br/2012/07/25/o-que-e-css-e-qual-sua-importancia/ 
+http://www.frontendbrasil.com.br/artigos/a-historia-do-html/
+
+http://www.dsc.ufcg.edu.br/~pet/jornal/novembro2012/materias/historia_da_computacao.html
+https://fit.faccat.br/~sorgetz/ArtigoHTML.pdf
+
+http://kendsnyder.com/wp-content/uploads/2016/08/post-44892276.png
+
+https://hbueno.wordpress.com/2009/04/29/virtualizacao-um-pouco-de-historia/
