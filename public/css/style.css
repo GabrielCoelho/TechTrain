@@ -12,11 +12,39 @@ body{
     display: grid;
     grid-template-columns: 5% 30% 15% 15% 30% 5%;
     grid-template-rows: 49px 500px 500px 250px 75px;
-    grid-template-areas: ". nav nav nav nav ."
-                         ". header header header header ."
-                         ". main main main aside ."
-                         ". main main main aside ."
-                         ". footer footer footer footer .";
+    grid-template-areas: 
+       ". nav nav nav nav ."
+       ". header header header header ."
+       ". main main main aside ."
+       ". main main main aside ."
+       ". footer footer footer footer .";
+}
+
+/*Tablet view*/
+@media (max-width: 768px){
+    .wrapperbody {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "main main aside"
+        "footer footer aside"
+    }
+}
+
+/*Mobile view*/
+@media (max-width: 600px){
+.wrapperbody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+       "nav nav"
+       "header header"
+       "main main"
+       "aside aside"
+       "footer footer";
+}
 }
 
 .cabecalho{

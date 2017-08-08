@@ -24,9 +24,9 @@
                   </ul>
               </div>
             </nav>
-            <main class="principal"></main>
-            <aside class="lateral"></aside>
-            <footer class="rodape"></footer>
+            <main class="principal"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut tempora, nemo expedita tempore perspiciatis deserunt ipsam, assumenda, at nisi beatae accusantium! Quas autem dolores, vero repellendus similique ullam aspernatur cumque. </p></main>
+            <aside class="lateral"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut tempora, nemo expedita tempore perspiciatis deserunt ipsam, assumenda, at nisi beatae accusantium! Quas autem dolores, vero repellendus similique ullam aspernatur cumque. </p></aside>
+            <footer class="rodape"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut tempora, nemo expedita tempore perspiciatis deserunt ipsam, assumenda, at nisi beatae accusantium! Quas autem dolores, vero repellendus similique ullam aspernatur cumque. </p></footer>
         </div>
     </body>
 </html>
