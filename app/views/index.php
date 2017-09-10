@@ -91,7 +91,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="contents">
-						<h2>Junte o poder do <span>YouTube</span> e da <span>qualidade</span>dos professores</h2>
+						<h2>Junte o poder do <span>YouTube</span> e da <span>qualidade</span> dos professores</h2>
 						<p>Tenha um <em>supersite</em> de aprendizado na palma de sua mão.</p>
 					</div>
 				</div>
@@ -175,13 +175,13 @@
 				<div class="col-md-6">
 					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
 						<div class="align-center">
-							<h4>Quick Support</h4>					
+							<h4>Hacking - Propósitos Éticos</h4>					
 							<div class="icon">
-								<i class="fa fa-heart-o fa-3x"></i>
+								<i class="fa fa-unlock fa-3x"></i>
 
 							</div>
 							<p>
-							 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+							 Se torne um perito em segurança da informação.
 							</p>
 							<div class="ficon">
 								<a href="" alt="">Learn more</a> <i class="fa fa-long-arrow-right"></i>
@@ -192,13 +192,13 @@
 				<div class="col-md-6">
 					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
 						<div class="align-center">
-							<h4>Easy Customize</h4>					
+							<h4>Música</h4>					
 							<div class="icon">
-								<i class="fa fa-laptop fa-3x"></i>
+								<i class="fa fa-music fa-3x"></i>
 
 							</div>
 							<p>
-							 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+							 Domine as partituras ou escolha um instrumento!
 							</p>
 							<div class="ficon">
 								<a href="" alt="">Learn more</a> <i class="fa fa-long-arrow-right"></i>
