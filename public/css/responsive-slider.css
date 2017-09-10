@@ -11,7 +11,7 @@
 }
 .responsive-slider .slides {
   position: relative;
-  overflow: hidden;
+  overflow: unset;
 }
 .responsive-slider .slides ul {
   list-style-type: none;

@@ -11,6 +11,7 @@
         <link href="./public/css/style.css" rel="stylesheet">	
     </head>
     <body>
+	<div class="cabecalho"></div>
     <header>
 		<div class="container">
 			<div class="row">
@@ -24,9 +25,8 @@
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation" class="active"><a href="index.html">Home</a></li>
-								
-								<li class="blog" role="presentation"><a href="blog.html">Blog</a></li>
 								<li class="curso" role="presentation"><a href="portfolio.html">Cursos</a></li>
+								<li class="blog" role="presentation"><a href="blog.html">Blog</a></li>
                                 <li class="cert" role="presentation"><a href="contacts.html">Certificados</a></li>
                                 <li class="login" role="presentation"><a href="contacts.html">Login</a></li>							
 							</ul>
@@ -79,8 +79,8 @@
 					</ul>
 				</div>
 		   
-				<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-				<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>		
+				<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x slidlef"></i></a>
+				<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x slidrig"></i></a>		
 			</div>
 		</div>
 	</div>

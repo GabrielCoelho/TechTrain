@@ -21,6 +21,12 @@ a:hover {
 	text-decoration:none;	
 }
 
+.cabecalho{
+	display: block;
+	border: 2.8px solid	#50c0e9;
+	margin: 0 auto;
+}
+
 .navbar-default {
 	background-color: #fff;
 	border-radius:0;
@@ -228,6 +234,16 @@ button.btn-primary h2 {
 /* --- About --- */
 .row-slider {
 	margin-bottom:50px;
+}
+
+.slidlef{
+	position: absolute;
+	left: -28px;
+}
+
+.slidrig{
+	position: absolute;
+	left: 16px;
 }
 
 .thumnails {
