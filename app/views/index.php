@@ -39,7 +39,7 @@
 	
 	<!-- Responsive slider - START -->
 	<div class="slider">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
 				<div class="slides" data-group="slides">
