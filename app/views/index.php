@@ -283,10 +283,10 @@
 							<div class="icon">
 								<i class="fa fa-comments-o fa-3x"></i>
 							</div>
-							<img src="./public/images/a.jpg" alt="" class="img-responsive">
+							<img src="./public/images/13.jpg" alt="" class="img-responsive">
 							<p>
-                             Gostei muito do curso, me ajudou bastante a resolver os problemas dos trabalhos que peguei como freelancer. 
-                             Agradeço muito a TechTrain por disponibilizar vários cursos grátis e pagos em um único site.
+                             Gostei do curso, me ajudou bastante a resolver problemas do trabalho. 
+                             Agradeço a TechTrain por disponibilizar os cursos.
 							</p>
 							<div class="ficon">
 								<a href="" alt="">Veja mais comentários</a><i class="fa fa-long-arrow-right"></i>
@@ -318,7 +318,7 @@
 							<div class="icon">
 								<i class="fa fa-comments-o fa-3x"></i>
 							</div>
-							<img src="./public/images/c.jpg" alt="" class="img-responsive">
+							<img src="./public/images/13.jpg" alt="" class="img-responsive">
 							<p>
 							 Confesso que fiquei receosa no princípio, mas TechTrain com certeza tem um futuro ao lado de Udemy e Udacity.
 							</p>
