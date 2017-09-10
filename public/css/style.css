@@ -182,14 +182,15 @@ button.btn-primary h2 {
 }
 
 .contents {
-	background-color:#fff;
+	/*background-color:#fff*/;
 	padding:50px;
 	text-align:center;
-	color:#50c0e9;	
+	/*color:#50c0e9;*/	
 }
 .contents p {
-	color:#50c0e9;
+	color:#FFF;
 	text-transform:uppercase;
+	font-size: 1.15em;
 }
 
 .contents h2 {	
@@ -653,6 +654,13 @@ footer .widget ul li a {
 	color:#000;
 }
 
+.ctnbg{
+	background: #1aa1d2;
+	margin-top: 2px;
+}
 
-
+.ctnbg > .container > .row > .contents{
+	color: #FFF;
+	background: #1aa1d2;
+}
 

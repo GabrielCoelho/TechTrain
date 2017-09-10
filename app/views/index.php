@@ -86,17 +86,18 @@
 	</div>
 	</div>
     <!-- Responsive slider - END -->
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="contents">
-					<h2>Junte o poder do <span>YouTube</span> e da <span>qualidade</span>dos professores</h2>
-					<p>Tenha um <em>supersite</em> de aprendizado na palma de sua mão.</p>
+	<div class="ctnbg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="contents">
+						<h2>Junte o poder do <span>YouTube</span> e da <span>qualidade</span>dos professores</h2>
+						<p>Tenha um <em>supersite</em> de aprendizado na palma de sua mão.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
 	
 
 	
@@ -230,7 +231,7 @@
 											<div class="slide-bodys" data-group="slide">
 												<li><img alt="" class="img-responsive" src="./public/images/3.jpg" width="100%" height="450"/></li>
 												<li><img alt="" class="img-responsive" src="./public/images/4.jpg" width="100%" height="450"/></li>
-												<li><img alt="" class="img-responsive" src="./public/images/5.jpg" width="100%" height="450"/></li>
+												<li><img alt="" class="img-responsive" src="./public/images/12.jpg" width="100%" height="450"/></li>
 											</div>
 										</ul>
 											
