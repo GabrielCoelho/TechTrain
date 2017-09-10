@@ -11,7 +11,7 @@
 }
 .responsive-slider .slides {
   position: relative;
-  overflow: unset;
+  overflow: hidden;
 }
 .responsive-slider .slides ul {
   list-style-type: none;
@@ -142,7 +142,7 @@
   font-size: 30px;
   color: #fff;
   top: 40%;
-  color: #50c0e9;
+  color: #5074e9;
   padding: 10px;
   margin-top:20px;
 }
@@ -164,7 +164,7 @@
 }
 .responsive-slider .slider-control.right:hover {
   text-decoration: none;
-  padding-right: 10px;
+  /*padding-right: 10px;*/
 }
 @media (max-width: 480px) {
   .responsive-slider .slider-control.left,
