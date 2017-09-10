@@ -46,7 +46,7 @@
 					<ul>
 						<li>
 							<div class="slide-body" data-group="slide">
-								<img src="./public/images/2a.jpg" alt="">
+								<img src="./public/images/morning-laptop-brunch.jpg" alt="">
 								<div class="caption header" data-animate="slideAppearUpToDown" data-delay="500" data-length="300">
 									<button class="btn btn-primary"><h2>Vídeo aulas ao seu alcance</h2></button>
 									<div class="caption-sub" data-animate="slideAppearDownToUp" data-delay="1200" data-length="300"><button class="btn btn-primary"><h4><span>Reunidas em um só lugar</span></h4></button></div>
@@ -56,7 +56,7 @@
 						</li>
 						<li>
 							<div class="slide-body" data-group="slide">
-								<img src="./public/images/1.jpg" alt="">
+								<img src="./public/images/train-station-smartphone.jpg" alt="">
 								<div class="caption header" data-animate="slideAppearDownToUp" data-delay="500" data-length="300">
 									<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"><h2>Fotografia, Design e outros</h2></button>
 									<div class="caption-sub" data-animate="slideAppearUpToDown" data-delay="800" data-length="300"><button class="btn btn-primary"><h4><span>Aprenda e classifique os professores</span></h4></button></div>
@@ -66,7 +66,7 @@
 						</li>
 						<li>
 							<div class="slide-body" data-group="slide">
-								<img src="./public/images/10.jpg" alt="">
+								<img src="./public/images/drinking-coffee-laptop.jpg" alt="">
 								<div class="caption header" data-animate="slideAppearUpToDown" data-delay="500" data-length="300">
 								  <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"><h2>Foco no aprendizado</h2></button>
 								  <div class="caption-sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><button class="btn btn-primary"><h4>Cursos pagos: apoio diretamente com o professor</h4></button></div>
@@ -283,7 +283,7 @@
 							<div class="icon">
 								<i class="fa fa-comments-o fa-3x"></i>
 							</div>
-							<img src="./public/images/team/3.jpg" alt="" class="img-responsive">
+							<img src="./public/images/a.jpg" alt="" class="img-responsive">
 							<p>
                              Gostei muito do curso, me ajudou bastante a resolver os problemas dos trabalhos que peguei como freelancer. 
                              Agradeço muito a TechTrain por disponibilizar vários cursos grátis e pagos em um único site.
@@ -318,7 +318,7 @@
 							<div class="icon">
 								<i class="fa fa-comments-o fa-3x"></i>
 							</div>
-							<img src="./public/images/team/members3.jpg" alt="" class="img-responsive">
+							<img src="./public/images/c.jpg" alt="" class="img-responsive">
 							<p>
 							 Confesso que fiquei receosa no princípio, mas TechTrain com certeza tem um futuro ao lado de Udemy e Udacity.
 							</p>
