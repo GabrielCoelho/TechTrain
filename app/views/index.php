@@ -39,7 +39,7 @@
 	
 	<!-- Responsive slider - START -->
 	<div class="slider">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
 				<div class="slides" data-group="slides">
@@ -249,10 +249,10 @@
                                         e Firebase, você verá como é possível criar um site para 
                                         controlar suas 'COISAS', a partir da Internet.</p>								
 									
-									
 									<div class="ficon">
 										<a href="" alt="">Aprenda Conosco</a> <i class="fa fa-long-arrow-right"></i>
 									</div>
+									<p style="text-align: center;"><img src="./public/images/d.jpg" alt="Professor Binho" height="320px" width="60%"> </p>
 								</div>
 							</div>
 						</div>					
