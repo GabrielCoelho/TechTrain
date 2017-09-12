@@ -128,6 +128,11 @@ a:hover {
 	background-color:#f9f9f9;
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	border-color: #E258CB;
+	color: #E258CB;
+}
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {

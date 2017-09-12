@@ -51,7 +51,7 @@
 .responsive-slider .slides ul li .slide-body .caption.header h1 {
   font-size: 50px;
   padding: 0 3px 0 3px;
-  
+  text-align: center;
 }
 .responsive-slider .slides ul li .slide-body .caption.header h2 {
   font-size: 40px;
@@ -82,6 +82,7 @@
   bottom: -8px;
   right: -20px;
   font-weight: bold;
+  text-align: center;
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .responsive-slider .slides ul li .slide-body .caption.sub {
