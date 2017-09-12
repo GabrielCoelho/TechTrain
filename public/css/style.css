@@ -133,6 +133,11 @@ a:hover {
 	color: #E258CB;
 }
 
+.nav>li>a:focus{
+	border-color: #E258CB;
+	color: #E258CB;
+}
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
