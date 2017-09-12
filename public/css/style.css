@@ -668,3 +668,9 @@ footer .widget ul li a {
 	background: #1aa1d2;
 }
 
+	
+.dropdown-menu {
+	width: 250px !important;
+	left: -125px;
+}
+
