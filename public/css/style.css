@@ -684,3 +684,29 @@ footer .widget ul li a {
 	left: -125px;
 }
 
+@media(max-width: 767px){
+
+	.navbar-default .navbar-form{
+		border: none;
+	}
+
+	.dropdown-menu{
+		width: 180px !important;
+		left: -50px;
+	}
+
+	.input-group .form-control{
+		width: 64%; 
+	}
+
+	button.btn.btn-primary.form-control{
+		margin-left: 8px !important;
+		width: 65% !important;
+	}
+
+	span.pull-right{
+		float: none !important;
+		margin-left: 5px;
+		font-size: 0.58em;
+	}
+}

@@ -10,7 +10,9 @@ switch ($uri) {
 
        require './app/views/index.php';
        break;
-
+    case '/cadastro':
+        require './app/views/cadastro.php';
+        break;
     default:
        require('Essa rota não é valida');
        break;

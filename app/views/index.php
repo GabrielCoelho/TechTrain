@@ -19,7 +19,7 @@
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<div class="navbar-brand">
-								<a href="index.html"><h1>TechTRAIN</h1></a>
+								<a href="/"><h1>TechTRAIN</h1></a>
 							</div>
 						</div>
 						<div class="menu">
@@ -62,7 +62,7 @@
 											</div>
 											<div class="form-group">
 												<!--Novo no site? Cadastre-se -->
-												<span class="pull-right"><a href="#">Cadastre-se</a></span>
+												<span class="pull-right"><a href="/cadastro">Cadastre-se</a></span>
 											</div>
 										</form>
 									</li>
@@ -324,7 +324,7 @@
 							</div>
 							<img src="./public/images/13.jpg" alt="" class="img-responsive">
 							<p>
-                             Gostei do curso, me ajudou bastante a resolver problemas do trabalho. 
+                             Gostei, me ajudou bastante a resolver problemas do trabalho. 
                              Agradeço a TechTrain por disponibilizar os cursos.
 							</p>
 							<div class="ficon">
