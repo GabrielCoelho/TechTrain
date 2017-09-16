@@ -249,12 +249,12 @@ button.btn-primary h2 {
 
 .slidlef{
 	position: absolute;
-	left: -28px;
+	left: -40px;
 }
 
 .slidrig{
 	position: absolute;
-	left: 16px;
+	left: 25px;
 }
 
 .thumnails {
@@ -709,4 +709,11 @@ footer .widget ul li a {
 		margin-left: 5px;
 		font-size: 0.58em;
 	}
+}
+
+.cadastro-form{
+	color: #1aa1d2;
+	font-weight: 700;
+	font-size: 1.25em;
+	padding: 0 auto;
 }

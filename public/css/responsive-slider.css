@@ -155,7 +155,7 @@
 }
 .responsive-slider .slider-control.left:hover {
   text-decoration: none;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
 }
 .responsive-slider .slider-control.right {
   right: 0;

@@ -80,7 +80,8 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12">
+            <div class="col-lg-2 col-md-1"></div>
+			<div class="col-lg-8 col-md-10 col-sm-12">
 				<div class="recent">
 					<button class="btn-primarys"><h3>Cadastre-se</h3></button>
 				</div>		
@@ -97,14 +98,21 @@
                     <div class="form-group">
 					<input type="password" class="form-control" name="senha-repeat" placeholder="Repita a Senha">
 					</div>
-					
-					<button type="submit" class="btn btn-default">Submit</button>
+                    <h2 class="cadastro-form">Ou...</h2>
+                    <p>
+                    <ul class="nav nav-tabs">
+                    <li role="presentation" class="cert"><a class="btn btn-info"><i class="fa fa-github fa-2x"></i>  Cadastre-se com Github</a>
+                    <li role="presentation" class=""><a class="btn btn-info"><i class="fa fa-facebook fa-2x"></i>  Cadastre-se com Facebook</a>
+                    <li role="presentation" class="login"><a class="btn btn-info"><i class="fa fa-twitter fa-2x"></i>  Cadastre-se com Twitter</a>
+                    </ul>
+                    </p>
+					<button type="submit" class="btn btn-default btn-primary">Submit</button>
 				</form>
 			</div>
-			
-			<div class="col-lg-6">
+			<div class="col-lg-2 col-md-1"></div>
+			<div class="col-lg-8">
 				<div class="recent">
-					<button class="btn-primarys"><h3>Motivos para se cadastrar</h3></button>
+					<button class="btn btn-primarys"><h3>Motivos para se cadastrar</h3></button>
 				</div>
 				<div class="contact-area">
 					<p>Tenha acesso a promoções para usuários cadastrados, 
@@ -226,7 +234,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./public/js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./public/js/bootstrap.min.js"></script>
+    <!-- <script src="./public/js/bootstrap.min.js"></script>-->
 	<script src="./public/js/responsive-slider.js"></script>
 	<script src="./public/js/wow.min.js"></script>
 	<script>
