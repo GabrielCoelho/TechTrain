@@ -1,4 +1,7 @@
 # TechTrain
+
+![Home Page Screenshot](./public/images/screenshots/home-page.png)
+
 * * *
 ## English informations 
 TechTrain is a Term Paper developed by students of "ETEC Euro Albino de Souza" wich is a technical school located in São Paulo state of Brazil. The course is "Informática" and the focus is desktop apps development. But this group is attempting to go for the web development, because fits more with the project's objective.
