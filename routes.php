@@ -13,7 +13,7 @@ switch ($uri) {
 		break;
 
 	case '/courses':
-		require './app/views/cursos.php';
+		$courseController->searchCourses();
 		break;
 	default:
 		require './app/views/404.php';
