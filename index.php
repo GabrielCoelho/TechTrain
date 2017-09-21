@@ -8,9 +8,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 //print_r($query_str);
 //die();
-require './config.php';    
-require './routes.php';    
-
-
-
-
+require './config.php';
+require './app/views/inc/header.php';
+require './routes.php';
+require './app/views/inc/footer.php';
