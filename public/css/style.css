@@ -717,3 +717,28 @@ footer .widget ul li a {
 	font-size: 1.25em;
 	padding: 0 auto;
 }
+
+.course1{
+	background-color: rgba(13, 141, 13, .28);
+	margin: 0 auto;
+}
+
+.course2{
+	background-color: rgba(226, 88, 203, 0.28);
+	margin: 0 auto;
+}
+
+.course3{
+	background-color: rgba(241, 145, 54, .28);
+	margin: 0 auto;
+}
+
+.course4{
+	background-color: rgba(156, 59, 235, 0.28);
+	margin: 0 auto;
+}
+
+.course5{
+	background-color: rgba(26, 164, 210, 0.28);
+	margin: 0 auto;
+}

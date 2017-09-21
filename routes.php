@@ -11,6 +11,10 @@ switch ($uri) {
 	case '/cadastro':
 		require './app/views/cadastro.php';
 		break;
+
+	case '/courses':
+		require './app/views/cursos.php';
+		break;
 	default:
 		require './app/views/404.php';
 		break;
