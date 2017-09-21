@@ -142,16 +142,16 @@
 			<div class="row">
 				<div class="popup-gallery">			
 					<div class="col-md-3">					
-						<a href="" title="The Cleaner"><img src="./public/images/a.jpg" class="img-responsive"alt="" /></a>
+						<a href="" title="The Cleaner"><img src="./public/images/c.jpg" class="img-responsive"alt="" /></a>
 					</div>
 					<div class="col-md-3">
-						<a href="" title="The Cleaner"><img src="./public/images/a.jpg" class="img-responsive"alt="" /></a>
+						<a href="" title="The Cleaner"><img src="./public/images/c.jpg" class="img-responsive"alt="" /></a>
 					</div>
 					<div class="col-md-3">
-						<a href="" title="The Cleaner"><img src="./public/images/a.jpg" class="img-responsive"alt="" /></a>
+						<a href="" title="The Cleaner"><img src="./public/images/c.jpg" class="img-responsive"alt="" /></a>
 					</div>
 					<div class="col-md-3">					
-						<a href="" title="The Cleaner"><img src="./public/images/a.jpg" class="img-responsive"alt="" /></a>
+						<a href="" title="The Cleaner"><img src="./public/images/c.jpg" class="img-responsive"alt="" /></a>
 					</div>
 				</div>
 			</div>
