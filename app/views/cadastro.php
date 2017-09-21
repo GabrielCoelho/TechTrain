@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-md-1"></div>
-        
+
         <div class="col-lg-8 col-md-10 col-sm-12">
             <div class="recent">
                 <button class="btn-primarys"><h3>Cadastre-se</h3></button>
             </div>		
-            
+
             <form role="form">
                 <div class="form-group">
                     <input type="text" class="form-control" name="nomeCompleto" placeholder="Nome Completo" />
@@ -19,19 +19,19 @@
                 <div class="form-group">
                     <input type="password" class="form-control" name="senha" placeholder="Senha">
                 </div>
-                
+
                 <div class="form-group">
                     <input type="password" class="form-control" name="senha-repeat" placeholder="Repita a Senha">
                 </div>
-                
+
                 <h2 class="cadastro-form">Ou...</h2>
 
                 <p>
-                    <ul class="nav nav-tabs">
-                        <li role="presentation" class="cert"><a class="btn btn-info"><i class="fa fa-github fa-2x"></i>  Cadastre-se com Github</a></li>
-                        <li role="presentation" class=""><a class="btn btn-info"><i class="fa fa-facebook fa-2x"></i>  Cadastre-se com Facebook</a></li>
-                        <li role="presentation" class="login"><a class="btn btn-info"><i class="fa fa-twitter fa-2x"></i>  Cadastre-se com Twitter</a></li>
-                    </ul>
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="cert"><a class="btn btn-info"><i class="fa fa-github fa-2x"></i>  Cadastre-se com Github</a></li>
+                    <li role="presentation" class=""><a class="btn btn-info"><i class="fa fa-facebook fa-2x"></i>  Cadastre-se com Facebook</a></li>
+                    <li role="presentation" class="login"><a class="btn btn-info"><i class="fa fa-twitter fa-2x"></i>  Cadastre-se com Twitter</a></li>
+                </ul>
                 </p>
 
                 <button type="submit" class="btn btn-default btn-primary">Submit</button>

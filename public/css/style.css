@@ -66,7 +66,38 @@ a:hover {
 	font-size:14px;
 	float:right;
 	text-transform:uppercase;
-	font-weight:600;	
+	font-weight:600;
+        padding: 5px 0;
+}
+
+.btn-open-menu{
+    display: none;
+    float: right;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    margin-top: 15px;
+    background: linear-gradient(to right, #ce2e3c, #da6709);
+    border-radius: 100%;
+    cursor: pointer;
+    outline: 0;
+}
+
+.btn-close-menu{
+    display: none;
+    float: right;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    margin-top: 15px;
+    background: linear-gradient(to right, #ce2e3c, #da6709);
+    border-radius: 100%;
+    cursor: pointer;
+    outline: 0;
+}
+
+.nav{
+    float: left;
 }
 
 .menu ul.nav-tabs li {
@@ -717,6 +748,32 @@ footer .widget ul li a {
 	padding: 0 auto;
 }
 
+<<<<<<< HEAD
+/*MEDIA SCREEN*/
+@media screen and (max-width: 1024px) {
+    .nav{
+        display: none;
+    }
+    
+    .menu{
+        display: block;
+        width: 100%;
+    }
+    
+    .btn-open-menu, .btn-close-menu{
+        float: left;
+        margin-right: 10px;
+    }
+    
+    .nav li{
+        display: block;
+        width: 100%;
+    }
+    
+    .btn-open-menu{
+        display: block;
+    }
+=======
 .course1{
 	background-color: rgba(13, 141, 13, .28);
 	margin: 0 auto;
@@ -740,4 +797,5 @@ footer .widget ul li a {
 .course5{
 	background-color: rgba(26, 164, 210, 0.28);
 	margin: 0 auto;
+>>>>>>> c4f285433a1bf693e23461d5ab9cbfc8a2199b86
 }
