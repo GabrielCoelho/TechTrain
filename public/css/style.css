@@ -748,7 +748,6 @@ footer .widget ul li a {
 	padding: 0 auto;
 }
 
-<<<<<<< HEAD
 /*MEDIA SCREEN*/
 @media screen and (max-width: 1024px) {
     .nav{
@@ -773,7 +772,6 @@ footer .widget ul li a {
     .btn-open-menu{
         display: block;
     }
-=======
 .course1{
 	background-color: rgba(13, 141, 13, .28);
 	margin: 0 auto;
@@ -797,5 +795,4 @@ footer .widget ul li a {
 .course5{
 	background-color: rgba(26, 164, 210, 0.28);
 	margin: 0 auto;
->>>>>>> c4f285433a1bf693e23461d5ab9cbfc8a2199b86
 }
