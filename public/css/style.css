@@ -749,6 +749,15 @@ footer .widget ul li a {
 }
 
 /*MEDIA SCREEN*/
+@media screen and (min-width: 1025px){
+	.nav{
+		display: block !important;
+	}
+
+	.btn-open-menu, .btn-close-menu{
+		display: none !important;
+	}
+}
 @media screen and (max-width: 1024px) {
     .nav{
         display: none;
@@ -760,8 +769,11 @@ footer .widget ul li a {
     }
     
     .btn-open-menu, .btn-close-menu{
-        float: left;
-        margin-right: 10px;
+        float: right;
+		margin-right: 10px;
+		position: absolute; 
+		top: -10px;
+		left: 85%;
     }
     
     .nav li{
@@ -771,7 +783,8 @@ footer .widget ul li a {
     
     .btn-open-menu{
         display: block;
-    }
+	}
+}
 .course1{
 	background-color: rgba(13, 141, 13, .28);
 	margin: 0 auto;
