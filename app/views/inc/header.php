@@ -34,7 +34,7 @@
                                     <li class="dropdown login">
                                         <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li style="width: 250px;">
+                                            <li>
                                                 <form class="navbar-form form" role="form">
                                                     <div class="form-group" style="padding-top: 5px;">
                                                         <div class="input-group">
