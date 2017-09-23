@@ -1,9 +1,10 @@
 <!-- Start cursos --> 
 <section class="portfolio">
-    <div class="course1">
+    <?php for($i = 1; $i<=count($curso); $i++) {?>
+    <div class="course<?=$i?>">
         <div class="container">
             <div class="row">
-                <h2 style="font-weight: bold; color: black;"><?php print_r($array);?></h2>
+                <h2 style="font-weight: bold; color: black;"><?= $curso['']?></h2>
             </div>
         <div class="row">
                 <div class="popup-gallery">
@@ -29,5 +30,6 @@
             <hr>
         </div>
     </div>
+    <?php }?>
 </section>
 
