@@ -25,12 +25,11 @@
                             <div class="menu">
                                 <button class="btn-open-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
                                 <button class="btn-close-menu"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
-                                
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="/">Home</a></li>
-                                    <li class="curso" role="presentation"><a href="/courses">Cursos</a></li>
-                                    <li class="blog" role="presentation"><a href="/blog">Blog</a></li>
-                                    <li class="cert" role="presentation"><a href="/certify">Certificados</a></li>
+                                    <li role="presentation" class="<?= $uri == '/' ? 'active' : ''  ?>"><a href="/">Home</a></li>
+                                    <li class="curso <?= $uri == '/courses' ? 'active' : ''  ?>"  role="presentation"><a href="/courses">Cursos</a></li>
+                                    <li class="blog <?= $uri == '/blog' ? 'active' : ''  ?>" role="presentation"><a href="/blog">Blog</a></li>
+                                    <li class="cert <?= $uri == '/certify' ? 'active' : ''  ?>" role="presentation"><a href="/certify">Certificados</a></li>
                                     <li class="dropdown login">
                                         <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
