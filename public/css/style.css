@@ -796,27 +796,27 @@ footer .widget ul li a {
         display: block;
 	}
 }
-.course1{
+.course_1{
 	background-color: rgba(13, 141, 13, .28);
 	margin: 0 auto;
 }
 
-.course2{
+.course_2{
 	background-color: rgba(226, 88, 203, 0.28);
 	margin: 0 auto;
 }
 
-.course3{
+.course_3{
 	background-color: rgba(241, 145, 54, .28);
 	margin: 0 auto;
 }
 
-.course4{
+.course_4{
 	background-color: rgba(156, 59, 235, 0.28);
 	margin: 0 auto;
 }
 
-.course5{
+.course_5{
 	background-color: rgba(26, 164, 210, 0.28);
 	margin: 0 auto;
 }

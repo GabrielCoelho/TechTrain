@@ -26,7 +26,10 @@ class CourseController
     $curso['design'] = array_filter($array, function($x){
       return $x['poloEducacional'] == "Design";
     });
-      
+
+    // print_r($curso);
+    // die();
+
     require './app/views/cursos.php';
   }
 
