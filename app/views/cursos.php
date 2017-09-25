@@ -1,10 +1,13 @@
 <!-- Start cursos --> 
 <section class="portfolio">
-    <?php for ($i=1; $i<=count($curso); $i++){?>
-    <div class="course_<?php echo $i;?>">
+    <?php foreach ($curso as $x) {
+     for($j = 1; $j<count($x); $j++){
+         $i=1;
+    ?>
+    <div class="course_<?php echo $i; $i++;?>">
         <div class="container">
             <div class="row">
-                <h2 style="font-weight: bold; color: black;"><?= $curso[$category]['poloEducacional']. $i;?></h2>
+                <h2 style="font-weight: bold; color: black;"><?= $x[$j]['poloEducacional']. $i;?></h2>
             </div>
         <div class="row">
                 <div class="popup-gallery">
@@ -30,19 +33,5 @@
             <hr>
         </div>
     </div>
-    <?php }?>
+    <?php }}?>
 </section>
-
-<?php
- if ($i == 1){
-     $category = 'info';
- }else if ($i == 2){
-    $category = 'adm';
-}else if ($i == 3){
-    $category = 'foto';
-}else if ($i == 4){
-    $category = 'musica';
-}else if ($i == 5){
-    $category = 'design';
-}
-?>
