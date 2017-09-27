@@ -23,26 +23,19 @@ class ComposerAutoloaderInitcf7258b466cfa00db30e79862c720452
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
         spl_autoload_unregister(array('ComposerAutoloaderInitcf7258b466cfa00db30e79862c720452', 'loadClassLoader'));
 
-        $useStaticLoader = PHP_VERSION_ID >= 50600 && !defined('HHVM_VERSION');
-        if ($useStaticLoader) {
-            require_once __DIR__ . '/autoload_static.php';
+        $map = require __DIR__ . '/autoload_namespaces.php';
+        foreach ($map as $namespace => $path) {
+            $loader->set($namespace, $path);
+        }
 
-            call_user_func(\Composer\Autoload\ComposerStaticInitcf7258b466cfa00db30e79862c720452::getInitializer($loader));
-        } else {
-            $map = require __DIR__ . '/autoload_namespaces.php';
-            foreach ($map as $namespace => $path) {
-                $loader->set($namespace, $path);
-            }
+        $map = require __DIR__ . '/autoload_psr4.php';
+        foreach ($map as $namespace => $path) {
+            $loader->setPsr4($namespace, $path);
+        }
 
-            $map = require __DIR__ . '/autoload_psr4.php';
-            foreach ($map as $namespace => $path) {
-                $loader->setPsr4($namespace, $path);
-            }
-
-            $classMap = require __DIR__ . '/autoload_classmap.php';
-            if ($classMap) {
-                $loader->addClassMap($classMap);
-            }
+        $classMap = require __DIR__ . '/autoload_classmap.php';
+        if ($classMap) {
+            $loader->addClassMap($classMap);
         }
 
         $loader->register(true);
