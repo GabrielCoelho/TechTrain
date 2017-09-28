@@ -30,6 +30,10 @@
                                     <li class="curso <?= $uri == '/courses' ? 'active' : ''  ?>"  role="presentation"><a href="/courses">Cursos</a></li>
                                     <li class="blog <?= $uri == '/blog' ? 'active' : ''  ?>" role="presentation"><a href="/blog">Blog</a></li>
                                     <li class="cert <?= $uri == '/certify' ? 'active' : ''  ?>" role="presentation"><a href="/certify">Certificados</a></li>
+                                    //Verifica se o usuário não está logado
+                                    <?php 
+                                        if(!$logged){
+                                    ?>
                                     <li class="dropdown login">
                                         <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
@@ -75,6 +79,17 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    //Verifica se está logado
+                                    <?php } else if($logged){?>
+                                        <li class="dropdown login">
+                                        <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> $usuario['nomeUsuario']; <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <?php }?>
                                 </ul>
                             </div>
                         </div>			
