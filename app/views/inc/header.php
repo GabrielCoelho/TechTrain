@@ -1,3 +1,8 @@
+<?php
+    $logged = false;
+    $usuario['nomeUsuario'] = 'Gabriel Coelho';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -82,13 +87,18 @@
                                     //Verifica se está logado
                                     <?php } else if($logged){?>
                                         <li class="dropdown login">
-                                        <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> $usuario['nomeUsuario']; <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                
-                                            </li>
-                                        </ul>
-                                    </li>
+                                            <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                                                <i class="glyphicon glyphicon-user"></i> 
+                                                <?= $usuario['nomeUsuario']; ?> <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="form-group" style="padding-top: 5px;">
+                                                      TESTE DE LOGIN  
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     <?php }?>
                                 </ul>
                             </div>
