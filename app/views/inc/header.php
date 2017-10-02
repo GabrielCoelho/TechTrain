@@ -1,5 +1,5 @@
 <?php
-    $logged = false;
+    $logged = true;
     $usuario['nomeUsuario'] = 'Gabriel Coelho';
 ?>
 
