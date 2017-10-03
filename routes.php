@@ -7,9 +7,12 @@ switch ($uri) {
 	case '/':
 		require './app/views/index.php';
 		break;
-	case '/cadastro':
-		require './app/views/cadastro.php';
+	case '/register':
+		$loginController->register();
 		break;
+	case '/post-register':
+		$loginController->postRegister();
+		break;		
 
 	case '/courses':
 		$courseController->searchCourses();
