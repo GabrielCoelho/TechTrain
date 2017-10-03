@@ -711,7 +711,8 @@ footer .widget ul li a {
 	
 .dropdown-menu {
 	width: 250px !important;
-	left: -125px;
+	left: -50%;
+	margin-left: 50px;
 }
 
 @media screen and (max-width: 1024px){
