@@ -7,9 +7,13 @@
                 <button class="btn-primarys"><h3>Cadastre-se</h3></button>
             </div>		
 
-            <form role="form">
+            <form role="form" method="post" action="/post-register">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="nomeCompleto" placeholder="Nome Completo" />
+                    <input type="text" class="form-control" name="fullName" placeholder="Nome Completo" />
+                </div>
+
+                <div class="form-group">
+                    <input type="date" class="form-control" name="dtNasc" placeholder="Data de nascimento">
                 </div>
 
                 <div class="form-group">
@@ -17,11 +21,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" name="senha" placeholder="Senha">
+                    <input type="password" class="form-control" name="password" placeholder="Senha">
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" name="senha-repeat" placeholder="Repita a Senha">
+                    <input type="password" class="form-control" name="rPassword" placeholder="Repita a Senha">
                 </div>
 
                 <h2 class="cadastro-form">Ou...</h2>

@@ -78,7 +78,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <!--Novo no site? Cadastre-se -->
-                                                        <span class="pull-right"><a href="/cadastro">Cadastre-se</a></span>
+                                                        <span class="pull-right"><a href="/register">Cadastre-se</a></span>
                                                     </div>
                                                 </form>
                                             </li>

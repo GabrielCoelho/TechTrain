@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Out-2017 às 19:14
--- Versão do servidor: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Generation Time: 04-Out-2017 às 00:42
+-- Versão do servidor: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tec_train`
+-- Database: `novo_tech_train`
 --
 
 -- --------------------------------------------------------
@@ -30,10 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `backup` (
   `idBackup` int(11) NOT NULL,
-  `horaBackup` time DEFAULT NULL,
-  `dataBackup` date DEFAULT NULL,
-  `assuntoBackup` varchar(155) DEFAULT NULL,
-  `conteudoBackup` text
+  `horaBackup` time NOT NULL,
+  `dataBackup` date NOT NULL,
+  `assuntoBackup` text NOT NULL,
+  `conteudoBackup` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -44,8 +42,8 @@ CREATE TABLE `backup` (
 
 CREATE TABLE `blog` (
   `idBlog` int(11) NOT NULL,
-  `assuntoBlog` varchar(155) DEFAULT NULL,
-  `dataBlog` date DEFAULT NULL
+  `assuntoBlog` text NOT NULL,
+  `dataBlog` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -56,10 +54,10 @@ CREATE TABLE `blog` (
 
 CREATE TABLE `certificado` (
   `idCertificado` int(11) NOT NULL,
-  `nmCurso` varchar(50) DEFAULT NULL,
-  `cargaHorariaCurso` time DEFAULT NULL,
-  `dataInicio` date DEFAULT NULL,
-  `dataTermino` date DEFAULT NULL
+  `nomeCurso` varchar(50) NOT NULL,
+  `cargaHorariaCurso` time NOT NULL,
+  `dataInicio` date NOT NULL,
+  `dataTermino` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -70,10 +68,10 @@ CREATE TABLE `certificado` (
 
 CREATE TABLE `curso` (
   `idCurso` int(11) NOT NULL,
-  `nmCurso` varchar(50) DEFAULT NULL,
-  `duracaoCurso` time DEFAULT NULL,
-  `dataCadastro` date DEFAULT NULL,
-  `infoCurso` text
+  `nomeCurso` varchar(50) NOT NULL,
+  `duracaoCurso` time NOT NULL,
+  `dataCadastro` date NOT NULL,
+  `infoCurso` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -83,7 +81,7 @@ CREATE TABLE `curso` (
 --
 
 CREATE TABLE `emailusuario` (
-  `emailUsuario` varchar(60) DEFAULT NULL
+  `emailUsuario` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -93,7 +91,7 @@ CREATE TABLE `emailusuario` (
 --
 
 CREATE TABLE `gradecurso` (
-  `gradeCurso` varchar(20) DEFAULT NULL
+  `gradeCurso` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,7 +101,7 @@ CREATE TABLE `gradecurso` (
 --
 
 CREATE TABLE `nivelusuario` (
-  `nivelUsuario` varchar(20) DEFAULT NULL
+  `nivelUsuario` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -113,10 +111,10 @@ CREATE TABLE `nivelusuario` (
 --
 
 CREATE TABLE `participa_usuario_curso` (
-  `idUsuario` int(11) DEFAULT NULL,
-  `idCurso` int(11) DEFAULT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idCurso` int(11) NOT NULL,
   `idParticipa` int(11) NOT NULL,
-  `dataParticipa` date DEFAULT NULL
+  `dataParticipa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -126,8 +124,8 @@ CREATE TABLE `participa_usuario_curso` (
 --
 
 CREATE TABLE `tem` (
-  `idCertificado` int(11) DEFAULT NULL,
-  `idCurso` int(11) DEFAULT NULL
+  `idCertificado` int(11) NOT NULL,
+  `idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -138,10 +136,10 @@ CREATE TABLE `tem` (
 
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
-  `loginUsuario` varchar(8) DEFAULT NULL,
-  `senhaUsuario` varchar(8) DEFAULT NULL,
-  `nmUsuario` varchar(60) DEFAULT NULL,
-  `dataUsuario` date DEFAULT NULL
+  `loginUsuario` varchar(8) NOT NULL,
+  `senhaUsuario` varchar(255) NOT NULL,
+  `nomeUsuario` varchar(60) NOT NULL,
+  `dataUsuario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -152,9 +150,9 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `usuario_faz` (
   `idFaz` int(11) NOT NULL,
-  `dataFaz` date DEFAULT NULL,
-  `idBackup` int(11) DEFAULT NULL,
-  `idUsuario` int(11) DEFAULT NULL
+  `dataFaz` date NOT NULL,
+  `idBackup` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -165,9 +163,9 @@ CREATE TABLE `usuario_faz` (
 
 CREATE TABLE `usuario_possui` (
   `idPossui` int(11) NOT NULL,
-  `dataPossui` date DEFAULT NULL,
-  `idBlog` int(11) DEFAULT NULL,
-  `idUsuario` int(11) DEFAULT NULL
+  `dataPossui` date NOT NULL,
+  `idBlog` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -236,6 +234,50 @@ ALTER TABLE `usuario_possui`
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `backup`
+--
+ALTER TABLE `backup`
+  MODIFY `idBackup` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `idBlog` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `certificado`
+--
+ALTER TABLE `certificado`
+  MODIFY `idCertificado` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `participa_usuario_curso`
+--
+ALTER TABLE `participa_usuario_curso`
+  MODIFY `idParticipa` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario_faz`
+--
+ALTER TABLE `usuario_faz`
+  MODIFY `idFaz` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario_possui`
+--
+ALTER TABLE `usuario_possui`
+  MODIFY `idPossui` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- Constraints for dumped tables
 --
 
@@ -243,30 +285,29 @@ ALTER TABLE `usuario_possui`
 -- Limitadores para a tabela `participa_usuario_curso`
 --
 ALTER TABLE `participa_usuario_curso`
-  ADD CONSTRAINT `participa_usuario_curso_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
-  ADD CONSTRAINT `participa_usuario_curso_ibfk_2` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`);
+  ADD CONSTRAINT `frk_idcurso` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`),
+  ADD CONSTRAINT `frk_usuarioid` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Limitadores para a tabela `tem`
 --
 ALTER TABLE `tem`
-  ADD CONSTRAINT `tem_ibfk_1` FOREIGN KEY (`idCertificado`) REFERENCES `certificado` (`idCertificado`),
-  ADD CONSTRAINT `tem_ibfk_2` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`);
+  ADD CONSTRAINT `frk_cursoid` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`),
+  ADD CONSTRAINT `frk_idcertificado` FOREIGN KEY (`idCertificado`) REFERENCES `certificado` (`idCertificado`);
 
 --
 -- Limitadores para a tabela `usuario_faz`
 --
 ALTER TABLE `usuario_faz`
-  ADD CONSTRAINT `usuario_faz_ibfk_1` FOREIGN KEY (`idBackup`) REFERENCES `backup` (`idBackup`),
-  ADD CONSTRAINT `usuario_faz_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+  ADD CONSTRAINT `frk_idbackup` FOREIGN KEY (`idBackup`) REFERENCES `backup` (`idBackup`),
+  ADD CONSTRAINT `frk_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Limitadores para a tabela `usuario_possui`
 --
 ALTER TABLE `usuario_possui`
-  ADD CONSTRAINT `usuario_possui_ibfk_1` FOREIGN KEY (`idBlog`) REFERENCES `blog` (`idBlog`),
-  ADD CONSTRAINT `usuario_possui_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
-COMMIT;
+  ADD CONSTRAINT `frk_idblog` FOREIGN KEY (`idBlog`) REFERENCES `blog` (`idBlog`),
+  ADD CONSTRAINT `frk_idusuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
