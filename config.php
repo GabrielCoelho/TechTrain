@@ -10,8 +10,8 @@ $loginController = new LoginController();
 
 //configuração do banco de dados
 $_ENV['config'] = [
-    'host' => 'localhost',
-    'dbname' => 'tech_train',
+    'host' => '127.0.0.1',
+    'dbname' => 'tec_train',
     'user' => 'root',
     'password' => '',
 ];

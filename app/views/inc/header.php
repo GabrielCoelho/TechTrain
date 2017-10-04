@@ -1,8 +1,3 @@
-<?php
-    $logged = true;
-    $usuario['nomeUsuario'] = 'Gabriel Coelho';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
