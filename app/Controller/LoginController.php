@@ -21,7 +21,7 @@ class LoginController
     public function postRegister()
     {
         //recebe os dados de email e senha
-        $dados['nmUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
+        $dados['nomeUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
         $dados['dataUsuario'] = htmlentities($_POST['dtNasc'], ENT_QUOTES);
         $dados['loginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
         $dados['senhaUsuario'] = htmlentities($_POST['password'], ENT_QUOTES);
