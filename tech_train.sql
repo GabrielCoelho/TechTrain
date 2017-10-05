@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Out-2017 às 00:42
+-- Generation Time: 05-Out-2017 às 00:24
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -57,7 +57,7 @@ CREATE TABLE `certificado` (
   `nomeCurso` varchar(50) NOT NULL,
   `cargaHorariaCurso` time NOT NULL,
   `dataInicio` date NOT NULL,
-  `dataTermino` int(11) NOT NULL
+  `dataTermino` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -114,7 +114,7 @@ CREATE TABLE `participa_usuario_curso` (
   `idUsuario` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
   `idParticipa` int(11) NOT NULL,
-  `dataParticipa` int(11) NOT NULL
+  `dataParticipa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
