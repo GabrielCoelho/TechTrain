@@ -84,7 +84,7 @@ class LoginController
         // autentica o usuário
         $_SESSION['user'] = $dados['loginUsuario'];
         
-        header('Location: ');
+        header('Location: /');
     }
 
     public function logout()
@@ -96,7 +96,20 @@ class LoginController
         header('Location: /');
     }
 
-    
+    public function isLogged()
+    {
+        //Verifica se o usuário está logado. 
+        if ($_SESSION['user'] == nil){
+            $_SESSION['logged'] = false;
+        } else{
+            $_SESSION['logged'] = true;
+        }
+        // For Testing: $_SESSION['logged'] = true;
+        $q = new QueryBuilder();
+        $_SESSION['nomeUsuario'] = $q->select('usuario', $dados[
+            "nomeUsuario"
+        ], "loginUsuario" == $_SESSION['user']);
+    }
 
     
 }

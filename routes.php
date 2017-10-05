@@ -5,6 +5,8 @@
 
 switch ($uri) {
 	case '/':
+		$loginController->isLogged();
+		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;
 	case '/register':
@@ -13,7 +15,9 @@ switch ($uri) {
 	case '/post-register':
 		$loginController->postRegister();
 		break;		
-
+	case '/login':
+		$loginController->login();
+		break;
 	// case '/editProfile':
 	// 	require './app/views/.php';
 	// 	break;
@@ -30,9 +34,10 @@ switch ($uri) {
 	// 	require './app/views/.php';
 	// 	break;
 
-	// case '/logout':
-	// 	require './app/views/.php';
-	// 	break;
+	case '/logout':
+		$loginController->logout();
+		require './app/views/index.php';
+		break;
 
 	case '/courses':
 		$courseController->searchCourses();

@@ -37,13 +37,13 @@
                                     <li class="cert <?= $uri == '/certify' ? 'active' : ''  ?>" role="presentation"><a href="/certify">Certificados</a></li>
                                     <!--Verifica se o usuário não está logado-->
                                     <?php 
-                                        if(!$logged){
+                                        if(!$_SESSION['logged']){
                                     ?>
                                     <li class="dropdown login">
                                         <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></a>
                                         <ul class="dropdown-menu" style="margin-left: -50px;">
                                             <li>
-                                                <form class="navbar-form form" role="form">
+                                                <form class="navbar-form form" role="form" action="/login" method="POST">
                                                     <div class="form-group" style="padding-top: 5px;">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
@@ -85,11 +85,11 @@
                                         </ul>
                                     </li>
                                     <!--Verifica se está logado-->
-                                    <?php } else if($logged){?>
+                                    <?php } else if($_SESSION['logged']){?>
                                         <li class="dropdown login">
                                             <a href="#" id="dropdownMenu1" data-toggle="dropdown">
                                                 <i class="glyphicon glyphicon-user"></i> 
-                                                <?= $usuario['nomeUsuario']; ?> <span class="caret"></span>
+                                                <?= $_SESSION['nomeUsuario']; ?> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li>
