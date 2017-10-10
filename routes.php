@@ -5,7 +5,7 @@
 
 switch ($uri) {
 	case '/':
-		$loginController->isLogged();
+		
 		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;

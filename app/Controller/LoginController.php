@@ -50,7 +50,7 @@ class LoginController
         }
 
         // guarda o email do usuario na session
-        $_SESSION['user'] = $dados['loginUsuario'];
+        //$_SESSION['user'] = $dados['loginUsuario'];
 
         //chama o método de configuração inicial do jogo
         header('Location: /');
@@ -60,31 +60,37 @@ class LoginController
     //metodo para realizar o login do usuário
     public function login()
     {
-        $dados['loginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
-        $dados['senhaUsuario'] = htmlentities($_POST['password'], ENT_QUOTES);
+        $dados['loginUsuario'] = htmlentities($_POST['loginEntrada'], ENT_QUOTES);
+        $dados['senhaUsuario'] = htmlentities($_POST['loginSenha'], ENT_QUOTES);
 
         $dados['senhaUsuario'] = crypt($dados['senhaUsuario'], '123456mad6991ef');
         
         $q = new QueryBuilder();
 
         
-        $cadastrou = $q->select('usuarios', [
+        $usuario = $q->select('usuario', [
             'loginUsuario' => $dados['loginUsuario'], 
             'senhaUsuario' => $dados['senhaUsuario']
         ]);
        
         // se o usuário não foi encontrado no banco de dados
         // emite uma mensagem de erro
-        if (!$cadastrou) {
+        if (!$usuario) {
             Flash::setFlash('Dados inválidos');
             header('Location: /');
             exit;
         }
 
         // autentica o usuário
-        $_SESSION['user'] = $dados['loginUsuario'];
+        // $consulta = $q->select('usuario', [
+        //      'nomeUsuario'
+        // ]);
+        // var_dump($usuario);
+        $_SESSION['user'] = $usuario[0]["nomeUsuario"];
+        $_SESSION['logged'] = true;
+        // header('Location: /courses');
         
-        header('Location: /');
+        Flash::setRedirectURL('/courses');
     }
 
     public function logout()
@@ -96,7 +102,7 @@ class LoginController
         header('Location: /');
     }
 
-    public function isLogged()
+    /*public function isLogged()
     {
         //Verifica se o usuário está logado. 
         if ($_SESSION['user'] == nil){
@@ -109,7 +115,7 @@ class LoginController
         $_SESSION['nomeUsuario'] = $q->select('usuario', $dados[
             "nomeUsuario"
         ], "loginUsuario" == $_SESSION['user']);
-    }
+    }*/
 
     
 }

@@ -1,4 +1,5 @@
 <!-- Start cursos --> 
+<<h1>INFORMATICA</h1>
 <section class="portfolio">
     <?php foreach ($curso as $x) {
      for($j = 1; $j<count($x); $j++){
