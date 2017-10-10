@@ -9,6 +9,9 @@ switch ($uri) {
 		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;
+	case '/pre-register':
+		require './app/views/cadastro.php';
+		break;
 	case '/register':
 		$loginController->register();
 		break;
