@@ -821,3 +821,9 @@ footer .widget ul li a {
 	background-color: rgba(26, 164, 210, 0.28);
 	margin: 0 auto;
 }
+
+#editP>h2{
+	color: #9C3BEB;
+	border-bottom: 2px solid #1aa1d2;
+	
+}

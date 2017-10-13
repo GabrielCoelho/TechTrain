@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-2 col-md-1"></div>
 
-        <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="col-lg-8 col-md-10 col-sm-12" id="editP">
             <div class="recent">
                 <button class="btn-primarys"><h3>Editar perfil</h3></button>
             </div>		
@@ -11,33 +11,30 @@
             <form role="form" method="post" action="">
                 <div class="form-group">
                     <input type="text" class="form-control" name="fullName" placeholder="Nome Completo" />
+                    <button type="submit" class="btn btn-default brn-primary">Editar nome.</button>
                 </div>
             </form>
             <h2>Email</h2>
             <p>Caso seja necessário, troque aqui seu email</p>
-
-                <button type="submit" class="btn btn-default btn-primary">Submit</button>
+            <form role="form" method="post" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="changeEmail" placeholder="exemplo@email.com" />
+                    <button type="submit" class="btn btn-default brn-primary">Trocar E-mail.</button>
+                </div>
+            </form>
+            <h2>Troque sua senha</h2>
+            <p>Afinal, a sua senha "123123" não é nem um pouco segura!</p>
+            <form role="form" method="post" action="">
+                <div class="form-group">
+                <input type="password" class="form-control" name="changeEmail" placeholder="Antiga Senha" /><br>
+                <input type="password" class="form-control" name="changeEmail" placeholder="Nova Senha" /><br>
+                <input type="password" class="form-control" name="changeEmail" placeholder="Repita a nova Senha" />
+                    <button type="submit" class="btn btn-default brn-primary">Trocar Senha.</button>
+                </div>
             </form>
         </div>
 
         <div class="col-lg-2 col-md-1"></div>
-
-        <div class="col-lg-8">
-            <div class="recent">
-                <button class="btn btn-primarys"><h3>Motivos para se cadastrar</h3></button>
-            </div>
-
-            <div class="contact-area">
-                <p>Tenha acesso a promoções para usuários cadastrados, e faça parte da comunidade por trás de TechTrain. <strong>Como? </strong></p>
-                <p>Ajude a atualizar os cursos existentes, indique novos cursos ou torne-se um instrutor e upe os vídeos na plataforma que você desejar.</p>
-                <h4>Atualmente trabalhamos com:</h4>
-                <p>YouTube, DailyMotion.</p>
-                <p>Também tenha acesso aos comentários exclusivos do site! De aluno para aluno, de instrutor para instrutor, a troca de conhecimento é sempre bem vinda!</p>
-            </div>										
-        </div>			
-    </div>
-</div>
-
 <div class="container">
     <div class="row">
         <hr>
