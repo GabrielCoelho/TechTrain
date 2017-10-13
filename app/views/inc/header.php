@@ -1,8 +1,3 @@
-<!--?php
-    $logged = true;
-    $usuario['nomeUsuario'] = "Marc Alder";
-?>-->
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -37,9 +32,42 @@
                                     <li class="cert <?= $uri == '/certify' ? 'active' : ''  ?>" role="presentation"><a href="/certify">Certificados</a></li>
                                     <!--Verifica se o usuário não está logado-->
                                     <?php 
-                                        if(!$_SESSION['logged']){
+                                       if (isset($_SESSION['logged']) && $_SESSION['logged']){
                                     ?>
-                                    <li class="dropdown login">
+
+
+
+<li class="dropdown login">
+                                            <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                                                <i class="glyphicon glyphicon-user"></i> 
+                                              <?php echo $_SESSION['user'] ?> <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <div class="navbar-form form" style="text-align: center;">
+                                                        <div class="form-group" style="padding-top: 10px;">
+                                                            <div class="input-group">
+                                                                <a href="/editProfile"><h5>Editar Perfil</h5></a>
+                                                                <a href="/myCourses"><h5>Meus Cursos</h5></a>
+                                                                <a href="/notify"><h5>Notificações</h5></a>
+                                                                <hr>
+                                                                <a href="/help"><h5>Ajuda</h5></a>
+                                                                <a href="/logout"><h5>Sair</h5></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    <?php } 
+                                                                                                                   
+                                    //<!--Verifica se está logado-->
+                                     else { ?>
+
+
+
+<li class="dropdown login">
                                         <a href="#" id="dropdownMenu1" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></a>
                                         <ul class="dropdown-menu" style="margin-left: -50px;">
                                             <li>
@@ -84,31 +112,9 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <!--Verifica se está logado-->
-                                    <?php } else if($_SESSION['logged']){?>
-                                        <li class="dropdown login">
-                                            <a href="#" id="dropdownMenu1" data-toggle="dropdown">
-                                                <i class="glyphicon glyphicon-user"></i> 
-                                                <?= $_SESSION['nomeUsuario']; ?> <span class="caret"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="navbar-form form" style="text-align: center;">
-                                                        <div class="form-group" style="padding-top: 5px;">
-                                                            <div class="input-group">
-                                                                <a href="/editProfile"><h5>Editar Perfil</h5></a>
-                                                                <a href="/myCourses"><h5>Meus Cursos</h5></a>
-                                                                <a href="/notify"><h5>Notificações</h5></a>
-                                                                <hr>
-                                                                <a href="/help"><h5>Ajuda</h5></a>
-                                                                <a href="/logout"><h5>Sair</h5></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    <?php }?>
+
+                                        <?php } ?>
+                                  
                                 </ul>
                             </div>
                         </div>			
