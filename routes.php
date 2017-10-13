@@ -17,7 +17,10 @@ switch ($uri) {
 		break;
 	case '/post-register':
 		$loginController->postRegister();
-		break;		
+		break;	
+	case '/editProfile':
+		require './app/views/editProfile.php';
+		break;
 	case '/login':
 		$loginController->login();
 		break;
