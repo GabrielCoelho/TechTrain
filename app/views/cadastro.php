@@ -5,7 +5,7 @@
         <div class="col-lg-8 col-md-10 col-sm-12">
             <div class="recent">
                 <button class="btn-primarys"><h3>Cadastre-se</h3></button>
-            </div>		
+            </div>
 
             <form role="form" method="post" action="/post-register">
                 <div class="form-group">
@@ -18,6 +18,10 @@
 
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="userName" placeholder="Nome de Usuário">
                 </div>
 
                 <div class="form-group">
@@ -55,8 +59,8 @@
                 <h4>Atualmente trabalhamos com:</h4>
                 <p>YouTube, DailyMotion.</p>
                 <p>Também tenha acesso aos comentários exclusivos do site! De aluno para aluno, de instrutor para instrutor, a troca de conhecimento é sempre bem vinda!</p>
-            </div>										
-        </div>			
+            </div>
+        </div>
     </div>
 </div>
 
