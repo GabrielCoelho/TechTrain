@@ -5,7 +5,7 @@
 
 switch ($uri) {
 	case '/':
-		
+
 		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;
@@ -17,17 +17,17 @@ switch ($uri) {
 		break;
 	case '/post-register':
 		$loginController->postRegister();
-		break;	
+		break;
 	case '/editProfile':
 		require './app/views/editProfile.php';
 		break;
 	case '/login':
 		$loginController->login();
 		break;
-	// case '/editProfile':
-	// 	require './app/views/.php';
-	// 	break;
-	
+	case '/myCourses':
+		require './app/views/myCourses.php';
+		break;
+
 	// case '/myProfile':
 	// 	require './app/views/.php';
 	// 	break;
