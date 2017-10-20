@@ -11,8 +11,11 @@ class EditController{
         $newFullName = $_POST['fullName'];
 
         //create the object of QueryBuilder
-        $query = new QueryBuilder();        
-
+        $query = new QueryBuilder();
+        $id = $query->select('usuario', $dados['nomeUsuario'], 'where nomeUsuario == $_SESSION[\'user\']'); 
+         var_dump($id);
+         die();     
+        $query-> update('usuario', $newFullName, 'where');
         
     }
 }

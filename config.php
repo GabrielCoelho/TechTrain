@@ -7,6 +7,8 @@ $courseController = new CourseController();
 use Project\Controller\LoginController;
 $loginController = new LoginController();
 
+use Project\Controller\EditController;
+$editController = new EditController();
 
 //configuração do banco de dados
 $_ENV['config'] = [
@@ -14,5 +16,5 @@ $_ENV['config'] = [
     'dbname' => 'tech_train',
     'user' => 'root',
     'password' => '',
-    'base_url' => 'http://localhost:9090',
+    'base_url' => 'http://localhost:1010',
 ];

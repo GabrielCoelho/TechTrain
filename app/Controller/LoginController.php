@@ -17,18 +17,23 @@ class LoginController
         require './app/views/cadastro.php';
     }
 
+   
     // esse método recebe os dados para registrar um usuário
     public function postRegister()
     {
         //recebe os dados de email e senha
         $dados['nomeUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
         $dados['dataUsuario'] = htmlentities($_POST['dtNasc'], ENT_QUOTES);
-        $dados['loginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
+        $dados['emailloginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
+        $dados['loginUsuario'] = htmlentities($_POST['userName'], ENT_QUOTES);
         $dados['senhaUsuario'] = htmlentities($_POST['password'], ENT_QUOTES);
         $rPassword = htmlentities($_POST['rPassword'], ENT_QUOTES);
 
+        
+
         //compara os dois campos de senha, devolvendo uma mensagem flash caso sejam diferentes
         if ($dados['senhaUsuario'] !== $rPassword) {
+            
             Flash::setFlash('As senhas não conferem');
             header('Location: /register');
             exit;
@@ -52,15 +57,16 @@ class LoginController
         // guarda o email do usuario na session
         //$_SESSION['user'] = $dados['loginUsuario'];
 
-        //chama o método de configuração inicial do jogo
-        header('Location: /');
+        //chama o método de configuração inicial do portal
+        //header('Location: /');
+        Flash::setRedirectURL('/');
 
     }
 
     //metodo para realizar o login do usuário
     public function login()
     {
-        $dados['loginUsuario'] = htmlentities($_POST['loginEntrada'], ENT_QUOTES);
+        $dados['emailloginUsuario'] = htmlentities($_POST['loginEntrada'], ENT_QUOTES);
         $dados['senhaUsuario'] = htmlentities($_POST['loginSenha'], ENT_QUOTES);
 
         $dados['senhaUsuario'] = crypt($dados['senhaUsuario'], '123456mad6991ef');
@@ -69,7 +75,7 @@ class LoginController
 
         
         $usuario = $q->select('usuario', [
-            'loginUsuario' => $dados['loginUsuario'], 
+            'emailloginUsuario' => $dados['emailloginUsuario'], 
             'senhaUsuario' => $dados['senhaUsuario']
         ]);
        

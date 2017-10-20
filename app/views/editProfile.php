@@ -8,7 +8,7 @@
             </div>		
             <h2>Nome Completo</h2>
             <p>Note que é necessário cadastrar seu nome completo para que possamos validar os certificados</p>
-            <form role="form" method="post" action="">
+            <form role="form" method="post" action="/editName">
                 <div class="form-group">
                     <input type="text" class="form-control" name="fullName" placeholder="Nome Completo" />
                     <button type="submit" class="btn btn-default brn-primary">Editar nome.</button>

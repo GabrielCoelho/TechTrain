@@ -9,23 +9,37 @@ switch ($uri) {
 		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;
-	case '/pre-register':
-		require './app/views/cadastro.php';
-		break;
+	
 	case '/register':
 		$loginController->register();
 		break;
+
 	case '/post-register':
 		$loginController->postRegister();
 		break;
-	case '/editProfile':
-		require './app/views/editProfile.php';
-		break;
+
 	case '/login':
 		$loginController->login();
 		break;
+
 	case '/myCourses':
 		require './app/views/myCourses.php';
+		break;
+
+	case '/editProfile':
+		require './app/views/editProfile.php';
+		break;
+
+	case '/editName':
+		$editController->editFullName();
+		break;
+
+	case '/changeEmail':
+		require './app/views/editProfile.php';
+		break;
+
+	case '/changePassword':
+		require './app/views/editProfile.php';
 		break;
 
 	// case '/myProfile':
@@ -48,6 +62,7 @@ switch ($uri) {
 	case '/courses':
 		$courseController->searchCourses();
 		break;
+		
 	default:
 		require './app/views/404.php';
 		break;
