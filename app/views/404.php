@@ -1,3 +1,4 @@
+<?php require './app/views/inc/header.php'; ?>
 <div class="text-muted">
     <div class="container">
         <div class="row">
@@ -10,3 +11,4 @@
         </div>
     </div>
 </div>
+<?php require './app/views/inc/footer.php'; ?>

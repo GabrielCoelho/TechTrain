@@ -1,5 +1,6 @@
 <?php
 
+use Project\Db\QueryBuilder;
 //rotas da aplicação
 //a variável $uri já contém os dados da rota solicitada
 
@@ -27,19 +28,22 @@ switch ($uri) {
 		break;
 
 	case '/editProfile':
-		require './app/views/editProfile.php';
+		$editController->editProfile();
 		break;
 
 	case '/editName':
-		$editController->editFullName();
+		$n=new QueryBuilder();
+		$n->editFullName();
 		break;
 
 	case '/changeEmail':
-		require './app/views/editProfile.php';
+		$n=new QueryBuilder();
+		$n->changeEmail();
 		break;
 
 	case '/changePassword':
-		require './app/views/editProfile.php';
+	$n=new QueryBuilder();
+	$n->changePasswd();
 		break;
 
 	// case '/myProfile':

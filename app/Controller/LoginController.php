@@ -59,7 +59,7 @@ class LoginController
 
         //chama o método de configuração inicial do portal
         //header('Location: /');
-        Flash::setRedirectURL('/');
+        header('Location: /');
 
     }
 
@@ -93,11 +93,11 @@ class LoginController
         // ]);
         // var_dump($usuario);
         $_SESSION['user'] = $usuario[0]["nomeUsuario"];
+        $_SESSION['id'] = $usuario[0]["idUsuario"];
+        $_SESSION['senha'] = $usuario[0]["senhaUsuario"];
         $_SESSION['logged'] = true;
-        // header('Location: /courses');
-        
-        Flash::setRedirectURL('/courses');
-    }
+        header('Location: /courses');
+        }
 
     public function logout()
     {

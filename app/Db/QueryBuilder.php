@@ -3,6 +3,7 @@
 namespace Project\Db;
 
 use Project\Db\Connection;
+use Project\Util\Flash;
 
 class QueryBuilder
 {
@@ -26,7 +27,7 @@ class QueryBuilder
         $s = $this->pdo->prepare("select * from {$table} {$where}");
         try{
             $s->execute($parameters);
-
+            
             return $first ? $s->fetch($fetch) : $s->fetchAll($fetch);
 
         }  catch(\PDOException $e){
@@ -81,5 +82,80 @@ class QueryBuilder
         } catch (\PDOException $ex) {
             die($ex->getMessage());
         }
+    }
+
+    public function editFullName(){
+        $sql = "UPDATE usuario SET nomeUsuario = :valor1 WHERE idUsuario = :valor2";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':valor1', $_POST['fullName']);
+        $stmt->bindParam(':valor2', $_SESSION['id']);
+        try
+        {
+            $stmt->execute();
+            Flash::setFlash('Nome atualizado com êxito!');
+            header('Location: /editProfile');
+        }
+        catch(PDOException $e)
+        {
+            echo "Erro: " . $e->getMessage();
+        } 
+
+        /*get the full name of the user by the form
+        $newFullName = $_POST['fullName'];
+
+        //create the object of QueryBuilder
+        $query = new QueryBuilder();
+        $id = $query->select('usuario', $dados['nomeUsuario'], 'where nomeUsuario == $_SESSION[\'user\']'); 
+         var_dump($id);
+         die();     
+        $query-> update('usuario', $newFullName, 'where');*/
+        
+    }
+    public function changeEmail(){
+        if(isset($_POST['changeEmail'])){
+        $sql = "UPDATE usuario SET emailloginUsuario = :valor1 WHERE idUsuario = :valor2";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':valor1', $_POST['changeEmail']);
+        $stmt->bindParam(':valor2', $_SESSION['id']);
+        try
+        {
+            $stmt->execute();Flash::setFlash('Senha incorreta');
+            Flash::setFlash('Email alterado com êxito!');
+            header('Location: /editProfile');
+        }
+        catch(PDOException $e)
+        {
+            echo "Erro: " . $e->getMessage();
+        } 
+     }
+    }
+    public function changePasswd(){
+        if ($_SESSION['senha'] !== $_POST['oldPass']) {
+            Flash::setFlash('Senha incorreta');
+            header('Location: /editProfile');
+    
+        }
+
+        //compara os dois campos de senha, devolvendo uma mensagem flash caso sejam diferentes
+        elseif ($_POST['newPass'] !== $_POST['repeatPass']) {
+                    
+            Flash::setFlash('As senhas não conferem');
+            header('Location: /editProfile');
+             exit;
+                }
+        $sql = "UPDATE usuario SET senhaUsuario = :valor1 WHERE idUsuario = :valor2";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':valor1', crypt($_POST['newPass'], '123456mad6991ef'));
+        $stmt->bindParam(':valor2', $_SESSION['id']);
+            
+        try
+        {
+            $stmt->execute();
+        }
+        catch(PDOException $e)
+        {
+            echo "Erro: " . $e->getMessage();
+        } 
+        
     }
 }

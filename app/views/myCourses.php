@@ -1,3 +1,4 @@
+<?php require './app/views/inc/header.php'; ?>
 <div class="container">
   <div class="row">
     <!-- PHP if para verificar se já se cadastrou
@@ -32,3 +33,4 @@ abaixo -->
     <hr>
   </div>
 </div>
+<?php require './app/views/inc/footer.php'; ?>
