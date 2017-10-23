@@ -8,7 +8,7 @@ class CourseController
 {
   public function searchCourses()
   {
-    $q = new QueryBuilder();
+   /* $q = new QueryBuilder();
     $array = $q->select("curso",["free" => 0]);
     
     // $curso['info'] = array_filter($array, function($x){
@@ -28,7 +28,7 @@ class CourseController
     // });
 
     // // print_r($curso);
-    // // die();
+    // // die();*/
 
     require './app/views/cursos.php';
   }

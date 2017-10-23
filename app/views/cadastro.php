@@ -14,7 +14,7 @@
 
             <form role="form" method="post" action="/post-register">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="fullName" placeholder="Nome Completo" />
+                    <input type="text" class="form-control" name="fullName" placeholder="Nome Completo" required/>
                 </div>
 
                 <div class="form-group">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
                 </div>
 
                 <div class="form-group">
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Senha">
+                    <input type="password" class="form-control" name="password" placeholder="Senha" required>
                 </div>
 
                 <div class="form-group">
@@ -75,4 +75,4 @@
     </div>
 </div>
 
-<?php require './app/views/inc/header.php'; ?>
+<?php require './app/views/inc/footer.php'; ?>

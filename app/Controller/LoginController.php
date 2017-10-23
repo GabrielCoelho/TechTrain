@@ -17,14 +17,6 @@ class LoginController
         require './app/views/cadastro.php';
     }
 
-    public function testeQuery()
-    {
-        $q = new QueryBuilder();
-        $resultado = $q->selectOrderBy('usuario', 'nomeUsuario', 'marc', 'desc');
-        print_r($resultado);
-        die();
-        
-    }
    
     // esse método recebe os dados para registrar um usuário
     public function postRegister()
@@ -67,7 +59,7 @@ class LoginController
 
         //chama o método de configuração inicial do portal
         //header('Location: /');
-        Flash::setRedirectURL('/');
+        header('Location: /');
 
     }
 
@@ -102,11 +94,10 @@ class LoginController
         // var_dump($usuario);
         $_SESSION['user'] = $usuario[0]["nomeUsuario"];
         $_SESSION['id'] = $usuario[0]["idUsuario"];
+        $_SESSION['senha'] = $usuario[0]["senhaUsuario"];
         $_SESSION['logged'] = true;
-        // header('Location: /courses');
-        
-        Flash::setRedirectURL('/courses');
-    }
+        header('Location: /courses');
+        }
 
     public function logout()
     {
@@ -117,20 +108,13 @@ class LoginController
         header('Location: /');
     }
 
-    /*public function isLogged()
+    public function testeQuery()
     {
-        //Verifica se o usuário está logado. 
-        if ($_SESSION['user'] == nil){
-            $_SESSION['logged'] = false;
-        } else{
-            $_SESSION['logged'] = true;
-        }
-        // For Testing: $_SESSION['logged'] = true;
         $q = new QueryBuilder();
-        $_SESSION['nomeUsuario'] = $q->select('usuario', $dados[
-            "nomeUsuario"
-        ], "loginUsuario" == $_SESSION['user']);
-    }*/
-
+        $resultado = $q->selectOrderBy('usuario', 'nomeUsuario', 'marc', 'desc');
+        print_r($resultado);
+        die();
+        
+    }
     
 }

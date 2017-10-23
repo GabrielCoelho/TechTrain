@@ -1,14 +1,12 @@
+<?php require './app/views/inc/header.php'; ?>
 <!-- Start cursos --> 
-<<h1>INFORMATICA</h1>
+<h1>INFORMATICA</h1>
 <section class="portfolio">
-    <?php foreach ($curso as $x) {
-     for($j = 1; $j<count($x); $j++){
-         $i=1;
-    ?>
-    <div class="course_<?php echo $i; $i++;?>">
+
+    <div class="course">
         <div class="container">
             <div class="row">
-                <h2 style="font-weight: bold; color: black;"><?= $x[$j]['poloEducacional']. $i;?></h2>
+                <h2 style="font-weight: bold; color: black;"></h2>
             </div>
         <div class="row">
                 <div class="popup-gallery">
@@ -33,6 +31,6 @@
         <div class="row">
             <hr>
         </div>
-    </div>
-    <?php }}?>
+    </di>
 </section>
+<?php require './app/views/inc/footer.php'; ?>

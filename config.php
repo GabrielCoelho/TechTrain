@@ -16,5 +16,4 @@ $_ENV['config'] = [
     'dbname' => 'tech_train',
     'user' => 'root',
     'password' => '',
-
 ];

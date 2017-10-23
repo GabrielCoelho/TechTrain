@@ -94,6 +94,5 @@
 <script src="./public/js/responsive-slider.js"></script>
 <script src="./public/js/wow.min.js"></script>
 <script src="./public/js/scripts.js"></script>
-
 </body>
 </html>
