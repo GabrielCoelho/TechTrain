@@ -20,20 +20,7 @@ catch(PDOException $e)
 $x = 'marc';
 $y = 4;
 
-// $sql = "UPDATE usuario SET nomeUsuario = :valor1 WHERE idUsuario = :valor2";
-// $stmt = $conn->prepare($sql);
-
-// $stmt->bindParam(':valor1', $x);
-// $stmt->bindParam(':valor2', $y);
-
-//  try
-//  {
-//     $stmt->execute();
-//  }
-//  catch(PDOException $e)
-//  {
-//     echo "Erro: " . $e->getMessage();
-//  } 
+ 
 
 $x = 1;
 

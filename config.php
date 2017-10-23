@@ -16,5 +16,5 @@ $_ENV['config'] = [
     'dbname' => 'tech_train',
     'user' => 'root',
     'password' => '',
-    'base_url' => 'http://localhost:1010',
+
 ];

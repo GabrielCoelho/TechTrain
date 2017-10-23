@@ -17,6 +17,14 @@ class LoginController
         require './app/views/cadastro.php';
     }
 
+    public function testeQuery()
+    {
+        $q = new QueryBuilder();
+        $resultado = $q->selectOrderBy('usuario', 'nomeUsuario', 'marc', 'desc');
+        print_r($resultado);
+        die();
+        
+    }
    
     // esse método recebe os dados para registrar um usuário
     public function postRegister()
@@ -93,6 +101,7 @@ class LoginController
         // ]);
         // var_dump($usuario);
         $_SESSION['user'] = $usuario[0]["nomeUsuario"];
+        $_SESSION['id'] = $usuario[0]["idUsuario"];
         $_SESSION['logged'] = true;
         // header('Location: /courses');
         

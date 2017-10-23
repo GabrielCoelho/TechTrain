@@ -1,3 +1,5 @@
+<?php require './app/views/inc/header.php'; ?>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-md-1"></div>

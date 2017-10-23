@@ -34,6 +34,28 @@ class QueryBuilder
         }
         
     }
+
+    public function selectOrderBy($table, $field, $value, $type = 'asc')
+    {
+        
+        $sql = "select * from {$table} where {$field} = :v1 order by idUsuario {$type}";
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':v1', $value);
+
+        try
+        {
+            $stmt->execute();
+            return $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+           
+        }
+        catch(PDOException $e)
+        {
+            echo "Erro: " . $e->getMessage();
+        } 
+
+
+    }
     
     public function insert($table, $data)
     {
@@ -81,5 +103,36 @@ class QueryBuilder
         } catch (\PDOException $ex) {
             die($ex->getMessage());
         }
+    }
+
+        public function editFullName(){
+
+        
+        $sql = "UPDATE usuario SET nomeUsuario = :valor1 WHERE idUsuario = :valor2";
+        $stmt =  $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':valor1', $_POST['fullName']);
+        $stmt->bindParam(':valor2', $_SESSION['id']);
+
+        try
+        {
+            $stmt->execute();
+        }
+        catch(PDOException $e)
+        {
+            echo "Erro: " . $e->getMessage();
+        }
+
+
+
+        /*get the full name of the user by the form
+        $newFullName = $_POST['fullName'];
+
+        //create the object of QueryBuilder
+
+         var_dump($id);
+         die(); */    
+
+        
     }
 }

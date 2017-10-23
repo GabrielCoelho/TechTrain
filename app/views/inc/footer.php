@@ -94,20 +94,6 @@
 <script src="./public/js/responsive-slider.js"></script>
 <script src="./public/js/wow.min.js"></script>
 <script src="./public/js/scripts.js"></script>
-<script>
-    $(document).ready(function(){
-        <?php 
-            $url = Project\Util\Flash::getRedirectURL();
-            if (!empty($url)){  
-        ?>
-                    window.location.replace(<?php echo '"'.$url.'"'; ?> ); 
-        <?php  
-            }
-        ?>
 
-       wow = new WOW({}).init();
-    });
-    
-</script>
 </body>
 </html>

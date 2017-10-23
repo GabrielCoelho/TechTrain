@@ -1,7 +1,7 @@
 <?php
-
+use Project\Db\QueryBuilder;
 //rotas da aplicação
-//a variável $uri já contém os dados da rota solicitada
+//a variável $uri já contém os dados da rota solicitad
 
 switch ($uri) {
 	case '/':
@@ -31,7 +31,8 @@ switch ($uri) {
 		break;
 
 	case '/editName':
-		$editController->editFullName();
+		$n=new QueryBuilder();
+		$n->editFullName();
 		break;
 
 	case '/changeEmail':
@@ -61,6 +62,10 @@ switch ($uri) {
 
 	case '/courses':
 		$courseController->searchCourses();
+		break;
+
+	case '/teste':
+		$loginController->testeQuery();
 		break;
 		
 	default:
