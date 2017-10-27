@@ -15,4 +15,9 @@ class CourseController
     require './app/views/cursos.php';
   }
 
+  public function courseClick()
+  {
+    require './app/views/coursePage.php';  
+  }
+
 }

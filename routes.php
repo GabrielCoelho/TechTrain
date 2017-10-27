@@ -10,7 +10,7 @@ switch ($uri) {
 		// require './app/views/inc/header.php';
 		require './app/views/index.php';
 		break;
-	
+
 	case '/register':
 		$loginController->register();
 		break;
@@ -66,7 +66,10 @@ switch ($uri) {
 	case '/courses':
 		$courseController->searchCourses();
 		break;
-		
+
+	case '/coursePage':
+	  $courseController->courseClick();
+		break;
 	default:
 		require './app/views/404.php';
 		break;
