@@ -70,6 +70,7 @@ switch ($uri) {
 	case '/coursePage':
 	  $courseController->courseClick();
 		break;
+		
 	default:
 		require './app/views/404.php';
 		break;

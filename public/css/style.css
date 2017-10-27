@@ -858,3 +858,25 @@ hr.style18:before {
 	padding: 15px 100px;
 	margin-left: 25%;
 }
+
+.jumbotron>p{
+	color: #000;
+	text-align: justify;
+}
+
+.jumbotron li{
+	color: #000;
+}
+
+@media screen and (min-width: 1200px) {
+	.margeada{
+		margin-left: 30%;
+		color: #000;
+	}
+
+	.signupCourse{
+		width: 340px;
+		position: absolute;
+		top: 1050px;
+	}
+}
