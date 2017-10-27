@@ -12,7 +12,7 @@
                     <h2>CURSO 1</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
                 <div class="col-md-3 col-xs-3">
