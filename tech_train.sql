@@ -115,6 +115,7 @@ CREATE TABLE `curso` (
   `dataCadastro` date DEFAULT NULL,
   `duracaoCurso` time DEFAULT NULL,
   `valorCurso` float(10,2) DEFAULT NULL
+  'imgCurso' varchar(80) DEFAULT NULL -- Campo acrescentada
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
