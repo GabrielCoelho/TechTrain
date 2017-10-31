@@ -8,31 +8,32 @@
                 <h2 style="font-weight: bold; color: black;">Cursos adicionados Recentemente</h2>
             </div>
             <div class="row course_1">
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
-                    <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
+                    <!-- Exemplo de imagem <img src="./public/images/smiling-smartphone.jpg" alt="TESTE" class="img-responsive">
+                    Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 2</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 3</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>Veja mais</h2>
                     <p>Cursos grátis recém adicionados</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
                 </div>
             </div>
 
@@ -41,31 +42,31 @@
                 <h2 style="font-weight: bold; color: black;">CATEGORIA 1</h2>
             </div>
             <div class="row course_2">
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 2</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 3</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>Veja mais</h2>
                     <p>Cursos grátis recém adicionados</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
                 </div>
             </div>
 
@@ -73,31 +74,31 @@
                 <h2 style="font-weight: bold; color: black;">CATEGORIA 2</h2>
             </div>
             <div class="row course_3">
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 2</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 3</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>Veja mais</h2>
                     <p>Cursos grátis recém adicionados</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
                 </div>
             </div>
 
@@ -105,31 +106,31 @@
                 <h2 style="font-weight: bold; color: black;">CATEGORIA 3</h2>
             </div>
             <div class="row course_4">
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 2</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 3</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>Veja mais</h2>
                     <p>Cursos grátis recém adicionados</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
                 </div>
             </div>
 
@@ -137,31 +138,31 @@
                 <h2 style="font-weight: bold; color: black;">CATEGORIA 4</h2>
             </div>
             <div class="row course_5">
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 2</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 3</h2>
                     <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
 
-                <div class="col-md-3 col-xs-3">
+                <div class="col-sm-3 col-xs-12">
                     <h2>Veja mais</h2>
                     <p>Cursos grátis recém adicionados</p>
-                    <p><a href="#" class="btn btn-success btn-sm">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
+                    <p><a href="#" class="btn btn-success btn-xs">Veja todos</a></p> <!-- Aqui é outra rota - '/recentlyAdded' ou 'novosCursos'... -->
                 </div>
             </div>
             <!-- Aqui termina o for -->
