@@ -11,7 +11,7 @@
                 <div class="col-sm-3 col-xs-12">
                     <h2>CURSO 1</h2>
                     <!-- Exemplo de imagem <img src="./public/images/smiling-smartphone.jpg" alt="TESTE" class="img-responsive">
-                    Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
+                    <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
                     <p>Descrição breve do curso, mais ou menos 150 caracteres.</p>
                     <p><a href="#" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> <!-- Poderia ser um modal que abrisse para mostrar o curso -->
                 </div>
