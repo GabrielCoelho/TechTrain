@@ -1,3 +1,5 @@
+<?php require './app/views/inc/header.php'; ?>
+
 <!--start main-->
 <div class="slider">
     <div class="container">
@@ -344,3 +346,5 @@
         <hr>
     </div>
 </div>
+
+<?php require './app/views/inc/footer.php'; ?>

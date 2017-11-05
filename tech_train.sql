@@ -106,16 +106,16 @@ CREATE TABLE `controlar_devcurso` (
 
 --
 -- Estrutura da tabela `curso`
---
+-- 
 
 CREATE TABLE `curso` (
   `idCurso` int(11) NOT NULL,
-  `idCertificado` int(11) NOT NULL,
   `nmCurso` varchar(80) NOT NULL,
   `infoCurso` longtext,
   `dataCadastro` date DEFAULT NULL,
   `duracaoCurso` time DEFAULT NULL,
-  `valorCurso` float(10,2) DEFAULT NULL
+  `valorCurso` float(10,2) DEFAULT NULL,
+  `imagCurso` varchar(100) DEFAULT NULL -- Campo acrescentado
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -333,8 +333,7 @@ ALTER TABLE `controlar_devcurso`
 -- Indexes for table `curso`
 --
 ALTER TABLE `curso`
-  ADD PRIMARY KEY (`idCurso`),
-  ADD KEY `idCertificado` (`idCertificado`);
+  ADD PRIMARY KEY (`idCurso`);
 
 --
 -- Indexes for table `dev`
@@ -489,11 +488,6 @@ ALTER TABLE `controlar_devcurso`
   ADD CONSTRAINT `controlar_devcurso_ibfk_2` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`);
 
 --
--- Limitadores para a tabela `curso`
---
-ALTER TABLE `curso`
-  ADD CONSTRAINT `curso_ibfk_1` FOREIGN KEY (`idCertificado`) REFERENCES `certificado` (`idCertificado`);
-
 --
 -- Limitadores para a tabela `faz_usuario`
 --

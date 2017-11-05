@@ -3,16 +3,15 @@
 namespace Project\Controller;
 
 use Project\Db\QueryBuilder;
+use Project\Util\Flash;
 
 class EditController{
 
-    public function editFullName(){
-        //get the full name of the user by the form
-        $newFullName = $_POST['fullName'];
+    public function editProfile(){
+        //Recebe qualquer mensagem flash que for disparada
+        $flash = Flash::getFlash();
+        //Redirecionando para a página de edição do perfil
+        require './app/views/editProfile.php';
 
-        //create the object of QueryBuilder
-        $query = new QueryBuilder();        
-
-        
     }
 }

@@ -62,10 +62,10 @@
                 <div class="col-lg-6">
                     <div class="copyright">
                         <p>
-                            <span>&copy; TechTrain Group 2017 Todos os Direitos Reservados. Por </span><a href="https://github.com/GabrielCoelho" target="_blank">Gabriel Coelho</a> e <a href="https://github.com/vcbecaleti">Vinicius Becaleti</a>
+                            <span>&copy; TechTrain Group 2017 Todos os Direitos Reservados. Por </span><a href="https://github.com/GabrielCoelho/TechTrain" target="_blank">Tech Train Group</a>
                         </p>
-                        <!-- 
-                            All links in the footer should remain intact. 
+                        <!--
+                            All links in the footer should remain intact.
                             Licenseing information is available at: http://bootstraptaste.com/license/
                             You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Arsha
                         -->
@@ -94,20 +94,5 @@
 <script src="./public/js/responsive-slider.js"></script>
 <script src="./public/js/wow.min.js"></script>
 <script src="./public/js/scripts.js"></script>
-<script>
-    $(document).ready(function(){
-        <?php 
-            $url = Project\Util\Flash::getRedirectURL();
-            if (!empty($url)){  
-        ?>
-                    window.location.replace(<?php echo '"'.$url.'"'; ?> ); 
-        <?php  
-            }
-        ?>
-
-       wow = new WOW({}).init();
-    });
-    
-</script>
 </body>
 </html>
