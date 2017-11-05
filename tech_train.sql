@@ -106,7 +106,7 @@ CREATE TABLE `controlar_devcurso` (
 
 --
 -- Estrutura da tabela `curso`
---
+-- 
 
 CREATE TABLE `curso` (
   `idCurso` int(11) NOT NULL,
@@ -114,8 +114,8 @@ CREATE TABLE `curso` (
   `infoCurso` longtext,
   `dataCadastro` date DEFAULT NULL,
   `duracaoCurso` time DEFAULT NULL,
-  `valorCurso` float(10,2) DEFAULT NULL
-  'imgCurso' varchar(80) DEFAULT NULL -- Campo acrescentada
+  `valorCurso` float(10,2) DEFAULT NULL,
+  `imagCurso` varchar(100) DEFAULT NULL -- Campo acrescentado
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
