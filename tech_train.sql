@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Out-2017 às 22:25
--- Versão do servidor: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: 09-Nov-2017 às 00:29
+-- Versão do servidor: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -35,6 +33,18 @@ CREATE TABLE `acessar_devbackup` (
   `CPFDev` int(11) NOT NULL,
   `emailDev` varchar(60) NOT NULL,
   `dataAcesso` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `aula`
+--
+
+CREATE TABLE `aula` (
+  `idAula` int(11) NOT NULL,
+  `tituloAula` varchar(40) NOT NULL,
+  `duracaoAula` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -106,7 +116,7 @@ CREATE TABLE `controlar_devcurso` (
 
 --
 -- Estrutura da tabela `curso`
--- 
+--
 
 CREATE TABLE `curso` (
   `idCurso` int(11) NOT NULL,
@@ -115,7 +125,8 @@ CREATE TABLE `curso` (
   `dataCadastro` date DEFAULT NULL,
   `duracaoCurso` time DEFAULT NULL,
   `valorCurso` float(10,2) DEFAULT NULL,
-  `imagCurso` varchar(100) DEFAULT NULL -- Campo acrescentado
+  `imagCurso` varchar(100) DEFAULT NULL,
+  `idAula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -304,6 +315,12 @@ ALTER TABLE `acessar_devbackup`
   ADD KEY `idBackup` (`idBackup`);
 
 --
+-- Indexes for table `aula`
+--
+ALTER TABLE `aula`
+  ADD PRIMARY KEY (`idAula`);
+
+--
 -- Indexes for table `backup`
 --
 ALTER TABLE `backup`
@@ -333,7 +350,8 @@ ALTER TABLE `controlar_devcurso`
 -- Indexes for table `curso`
 --
 ALTER TABLE `curso`
-  ADD PRIMARY KEY (`idCurso`);
+  ADD PRIMARY KEY (`idCurso`),
+  ADD KEY `idAula` (`idAula`);
 
 --
 -- Indexes for table `dev`
@@ -396,79 +414,71 @@ ALTER TABLE `ver_devcertificado`
 --
 ALTER TABLE `acessar_devbackup`
   MODIFY `idAcesso` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `aula`
+--
+ALTER TABLE `aula`
+  MODIFY `idAula` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `backup`
 --
 ALTER TABLE `backup`
   MODIFY `idBackup` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
   MODIFY `idBlog` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `certificado`
 --
 ALTER TABLE `certificado`
   MODIFY `idCertificado` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `controlar_devcurso`
 --
 ALTER TABLE `controlar_devcurso`
   MODIFY `idControla` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
   MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `dev`
 --
 ALTER TABLE `dev`
   MODIFY `idDev` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `faz_usuario`
 --
 ALTER TABLE `faz_usuario`
   MODIFY `idFaz` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `localizar_devusuario`
 --
 ALTER TABLE `localizar_devusuario`
   MODIFY `idLocaliza` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `participar_usuariocurso`
 --
 ALTER TABLE `participar_usuariocurso`
   MODIFY `idParticipa` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `possuir_dev`
 --
 ALTER TABLE `possuir_dev`
   MODIFY `idPossuir` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `ver_devcertificado`
 --
 ALTER TABLE `ver_devcertificado`
   MODIFY `idVer` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
@@ -488,6 +498,11 @@ ALTER TABLE `controlar_devcurso`
   ADD CONSTRAINT `controlar_devcurso_ibfk_2` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`);
 
 --
+-- Limitadores para a tabela `curso`
+--
+ALTER TABLE `curso`
+  ADD CONSTRAINT `frk_aula_curso` FOREIGN KEY (`idAula`) REFERENCES `aula` (`idAula`);
+
 --
 -- Limitadores para a tabela `faz_usuario`
 --
@@ -522,7 +537,6 @@ ALTER TABLE `possuir_dev`
 ALTER TABLE `ver_devcertificado`
   ADD CONSTRAINT `ver_devcertificado_ibfk_1` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`),
   ADD CONSTRAINT `ver_devcertificado_ibfk_2` FOREIGN KEY (`idCertificado`) REFERENCES `certificado` (`idCertificado`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
