@@ -20,4 +20,8 @@ class CourseController
     require './app/views/coursePage.php';  
   }
 
+  public function watchVideo()
+  {
+    require './app/views/videoPage.php';
+  }
 }
