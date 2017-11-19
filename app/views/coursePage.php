@@ -9,24 +9,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <img src="./public/images/train-station-smartphone.jpg" alt="Imagem" class="img-responsive img-rounded">
+        <img src="./public/images/php_developers.jpg" alt="Imagem" class="img-responsive img-rounded">
         <!-- Aqui teremos a imagem do curso de tamanho maior que na rota /courses -->
       </div>
     </div>
     <div class="row margeada">
       <p>
-        conteúdo explicativo do curso <br>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. <br>
-        Ut enim ad minim veniam,
-        quis nostrud exercitation
-        ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. <br>
-        Duis aute irure dolor in
-        reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur.
+        <?php $cursos['infoCurso_Simples']?>
         <!-- Aqui um conteúdo simples, apenas para explicar o que é e como é o curso -->
       </p>
 
@@ -34,13 +23,13 @@
 
     <aside class="signupCourse course_5">
       <div class="col-xs-12">
-        <img src="./public/images/13.jpg" alt="Professor do Curso" class="img-responsive img-circle" style="margin-left: 30px;">
+        <img src="./public/images/d.jpg" alt="Professor do Curso" class="img-responsive img-circle" style="margin-left: 30px;">
       </div>
       <hr class="style18">
       <ul>
-        <li><strong>Nome: </strong> Astolfo Bernardino Camiñes</li>
-        <li><strong>Canal: </strong> <a href="#">ABC da Programação</a></li>
-        <li><strong>Duração do Curso: </strong> 48Mil Horas</li>
+        <li><strong>Nome: </strong> João Rubens</li>
+        <li><strong>Canal: </strong> <a href="https://www.youtube.com/channel/UCeLVLkSv831fCGFZmRaPnQQ">Professor Binho</a></li>
+        <li><strong>Duração do Curso: </strong> 20 Horas</li>
         <li><strong>Certificado ao final: </strong> Não</li>
       </ul>
       <hr class="style18">

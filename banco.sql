@@ -28,7 +28,7 @@ CREATE TABLE `curso` (
   `nmCurso` varchar(60) NOT NULL,
   `infoCurso_Simples` varchar(20) NOT NULL,
   `infoCurso_Extensa` longtext,
-  `imagCurso` varchar(100) DEFAULT NULL,
+  `imagCurso` varchar(255) DEFAULT NULL,
   `dataCurso` date NOT NULL,
   PRIMARY KEY (`idCurso`),
   KEY `idGrade` (`idGrade`),

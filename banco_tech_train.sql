@@ -32,7 +32,7 @@ idGrade Integer(11) NOT NULL,
 nmCurso Varchar(60) NOT NULL,
 infoCurso_Simples Varchar(20) NOT NULL,
 infoCurso_Extensa LongText DEFAULT NULL,
-imagCurso Varchar(100)DEFAULT NULL,
+imagCurso Varchar(255)DEFAULT NULL,
 dataCurso Date NOT NULL,
 PRIMARY KEY (idCurso),
 CONSTRAINT FOREIGN KEY(idGrade) REFERENCES grade_curso (idGrade)
