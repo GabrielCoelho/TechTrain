@@ -13,7 +13,7 @@ $editController = new EditController();
 //configuração do banco de dados
 $_ENV['config'] = [
     'host' => '127.0.0.1',
-    'dbname' => 'tech_train',
+    'dbname' => 'banco',
     'user' => 'root',
     'password' => '',
 ];
