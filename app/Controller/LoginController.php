@@ -22,17 +22,12 @@ class LoginController
     public function postRegister()
     {
         //recebe os dados de email e senha
-        $dados['nmUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
-        $dados['emailUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
+        $dados['nomeUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
+        $dados['dataUsuario'] = htmlentities($_POST['dtNasc'], ENT_QUOTES);
+        $dados['emailloginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
+        $dados['loginUsuario'] = htmlentities($_POST['userName'], ENT_QUOTES);
         $dados['senhaUsuario'] = htmlentities($_POST['password'], ENT_QUOTES);
         $rPassword = htmlentities($_POST['rPassword'], ENT_QUOTES);
-
-        // $dados['nomeUsuario'] = htmlentities($_POST['fullName'], ENT_QUOTES);
-        // $dados['dataUsuario'] = htmlentities($_POST['dtNasc'], ENT_QUOTES);
-        // $dados['emailloginUsuario'] = htmlentities($_POST['email'], ENT_QUOTES);
-        // $dados['loginUsuario'] = htmlentities($_POST['userName'], ENT_QUOTES);
-        // $dados['senhaUsuario'] = htmlentities($_POST['password'], ENT_QUOTES);
-        // $rPassword = htmlentities($_POST['rPassword'], ENT_QUOTES);
 
         
 
@@ -71,8 +66,7 @@ class LoginController
     //metodo para realizar o login do usuário
     public function login()
     {
-        // $dados['emailloginUsuario'] = htmlentities($_POST['loginEntrada'], ENT_QUOTES);
-        $dados['emailUsuario'] = htmlentities($_POST['loginEntrada'],ENT_QUOTES);
+        $dados['emailloginUsuario'] = htmlentities($_POST['loginEntrada'], ENT_QUOTES);
         $dados['senhaUsuario'] = htmlentities($_POST['loginSenha'], ENT_QUOTES);
 
         $dados['senhaUsuario'] = crypt($dados['senhaUsuario'], '123456mad6991ef');
@@ -81,8 +75,7 @@ class LoginController
 
         
         $usuario = $q->select('usuario', [
-            // 'emailloginUsuario' => $dados['emailloginUsuario'], 
-            'emailUsuario' => $dados['emailUsuario'],
+            'emailloginUsuario' => $dados['emailloginUsuario'], 
             'senhaUsuario' => $dados['senhaUsuario']
         ]);
        
@@ -99,13 +92,11 @@ class LoginController
         //      'nomeUsuario'
         // ]);
         // var_dump($usuario);
-        // $_SESSION['user'] = $usuario[0]["nomeUsuario"];
-        $_SESSION['user'] = $usuario[0]["nmUsuario"];    
+        $_SESSION['user'] = $usuario[0]["nomeUsuario"];
         $_SESSION['id'] = $usuario[0]["idUsuario"];
         $_SESSION['senha'] = $usuario[0]["senhaUsuario"];
         $_SESSION['logged'] = true;
-        // header('Location: /courses');
-        header('Location: /cursos');
+        header('Location: /courses');
         }
 
     public function logout()

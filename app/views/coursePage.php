@@ -2,20 +2,21 @@
 <!-- Start the page -->
 <div class="page-header">
   <div class="container">
-    <h1 style="color: black;">NOME DO CURSO <small>descrição brevíssima ou campo de aprendizado</small></h1>
+    <h1 style="color: black;"><?= $dados['nmCurso'] ?> <small> <?= $dados['infoCurso_Simples'] ?></small></h1>
   </div>
 </div>
 <div class="jumbotron">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <img src="./public/images/php_developers.jpg" alt="Imagem" class="img-responsive img-rounded">
+        <img class="img-responsive img-rounded" src="./public/<?= $dados['imagCurso'] ?>" alt="Imagem" >
         <!-- Aqui teremos a imagem do curso de tamanho maior que na rota /courses -->
       </div>
     </div>
     <div class="row margeada">
       <p>
-        <?php $cursos['infoCurso_Simples']?>
+        <?= $dados['infoCurso_Extensa'] ?>
+      
         <!-- Aqui um conteúdo simples, apenas para explicar o que é e como é o curso -->
       </p>
 
@@ -33,7 +34,7 @@
         <li><strong>Certificado ao final: </strong> Não</li>
       </ul>
       <hr class="style18">
-      <button type="button" class="btn btn-success btn-lg btn-block" name="button">Inscreva-se nesse curso!</button>
+      <button type="button" class="btn btn-success btn-lg btn-block" name="button"><a href="/courseVideo?id=<?= $_SESSION['idCourse']?>"> Ir ao curso!</a></button>
     </aside>
 
     <div class="row margeada">

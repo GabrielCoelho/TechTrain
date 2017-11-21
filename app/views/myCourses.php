@@ -14,8 +14,9 @@ abaixo -->
       <hr class="style18">
 
       <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1">
-        <button class="btn btn-primary btn-lg center" name="button">Cadastre-se nos Cursos</button>
+        <button><a href="/courses" class="btn btn-primary btn-lg center" name="button">Cadastre-se nos Cursos</a></button>
       </div>
+     
     </div>
     <!-- PHP for para repetir o código a seguir
   pegando a query e exibindo os cursos cadastrados -->

@@ -31,6 +31,10 @@ switch ($uri) {
 		$editController->editProfile();
 		break;
 
+	case '/editTeacher':
+		$editController->editTeacher();
+		break;
+
 	case '/editName':
 		$n=new QueryBuilder();
 		$n->editFullName();
@@ -68,7 +72,14 @@ switch ($uri) {
 		break;
 
 	case '/coursePage':
-	  $courseController->courseClick();
+	  	$courseController->courseClick();
+		break;
+
+	case '/createCourse':
+		$courseController->courseCreate();
+		break;
+	case '/panelTeacher':
+		$courseController->teacherPanel();
 		break;
 	
 	case '/courseVideo':

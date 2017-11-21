@@ -14,4 +14,9 @@ class EditController{
         require './app/views/editProfile.php';
 
     }
+
+    public function editTeacher(){
+        $flash = Flash::getFlash();
+        require './app/views/editTeacher.php';
+    }
 }

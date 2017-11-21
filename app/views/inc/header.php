@@ -9,6 +9,13 @@
         <link rel="stylesheet" href="./public/css/animate.css">
         <link rel="stylesheet" href="./public/css/font-awesome.min.css">
         <link href="./public/css/style.css" rel="stylesheet">	
+
+        <style>
+            .image-teste{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
     </head>
     <body>
         <div class="cabecalho"></div>
@@ -50,6 +57,10 @@
                                                                 <a href="/editProfile"><h5>Editar Perfil</h5></a>
                                                                 <a href="/myCourses"><h5>Meus Cursos</h5></a>
                                                                 <a href="/notify"><h5>Notificações</h5></a>
+                                                                <hr>
+                                                                <a href="/createCourse"><h5>Criar um Curso</h5></a>
+                                                                <a href="/panelTeacher"><h5>Painel de Professor</h5></a>
+                                                                <a href="/editTeacher"><h5>Perfil Instrutor</h5></a>
                                                                 <hr>
                                                                 <a href="/help"><h5>Ajuda</h5></a>
                                                                 <a href="/logout"><h5>Sair</h5></a>
