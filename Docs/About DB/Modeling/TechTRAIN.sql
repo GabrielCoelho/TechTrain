@@ -1,9 +1,9 @@
--- GeraÁ„o de Modelo fÌsico
+-- Gera√ß√£o de Modelo f√çsico
 -- Sql ANSI 2003 - brModelo.
 
 
 
-CREATE TABLE Usu·rio (
+CREATE TABLE Usuario (
 idUsuario Varchar(40) PRIMARY KEY,
 nmUsuario Varchar(40),
 emailUsuario Varchar(40),
@@ -27,7 +27,7 @@ idGrade Varchar(40) PRIMARY KEY,
 nmGrade Varchar(40)
 )
 
-CREATE TABLE VÌdeo (
+CREATE TABLE Video (
 idVideo Varchar(40) PRIMARY KEY,
 idCurso Varchar(40),
 -- Erro: nome do campo duplicado nesta tabela!
@@ -41,13 +41,13 @@ CREATE TABLE Faz_Curso (
 idFazCurso Varchar(40) PRIMARY KEY,
 idCurso Varchar(40),
 idUsuario Varchar(40),
-dataInscriÁ„o Varchar(40),
+dataInscricao Varchar(40),
 -- Erro: nome do campo duplicado nesta tabela!
 idCurso Varchar(40),
 -- Erro: nome do campo duplicado nesta tabela!
 idUsuario Varchar(40),
 FOREIGN KEY(idCurso) REFERENCES Curso (idCurso),
-FOREIGN KEY(idUsuario) REFERENCES Usu·rio (idUsuario)
+FOREIGN KEY(idUsuario) REFERENCES Usuario (idUsuario)
 )
 
 ALTER TABLE Curso ADD FOREIGN KEY(idGrade) REFERENCES Grade Curso (idGrade)

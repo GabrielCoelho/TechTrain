@@ -1,543 +1,169 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1
--- Generation Time: 09-Nov-2017 às 00:29
--- Versão do servidor: 10.1.13-MariaDB
--- PHP Version: 5.6.21
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: tech_train
+-- ------------------------------------------------------
+-- Server version	5.7.20-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Database: `tech_train`
+-- Table structure for table `curso`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `acessar_devbackup`
---
-
-CREATE TABLE `acessar_devbackup` (
-  `idAcesso` int(11) NOT NULL,
-  `idDev` int(11) NOT NULL,
-  `idBackup` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `dataAcesso` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `aula`
---
-
-CREATE TABLE `aula` (
-  `idAula` int(11) NOT NULL,
-  `tituloAula` varchar(40) NOT NULL,
-  `duracaoAula` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `aulacurso`
---
-
-CREATE TABLE `aulacurso` (
-  `aulaCurso` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `backup`
---
-
-CREATE TABLE `backup` (
-  `idBackup` int(11) NOT NULL,
-  `assuntoBackup` longtext NOT NULL,
-  `conteudoBackup` longtext NOT NULL,
-  `dataBackup` date NOT NULL,
-  `horaBackup` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `blog`
---
-
-CREATE TABLE `blog` (
-  `idBlog` int(11) NOT NULL,
-  `dataBlog` date NOT NULL,
-  `assuntoBlog` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `certificado`
---
-
-CREATE TABLE `certificado` (
-  `idCertificado` int(11) NOT NULL,
-  `nmCurso` varchar(30) NOT NULL,
-  `dataTermino` date NOT NULL,
-  `dataInicio` date NOT NULL,
-  `cargaHorariaCurso` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `controlar_devcurso`
---
-
-CREATE TABLE `controlar_devcurso` (
-  `idControla` int(11) NOT NULL,
-  `idCurso` int(11) NOT NULL,
-  `idDev` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `dataControla` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `curso`
---
-
+DROP TABLE IF EXISTS `curso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `curso` (
-  `idCurso` int(11) NOT NULL,
-  `nmCurso` varchar(80) NOT NULL,
-  `infoCurso` longtext,
-  `dataCadastro` date DEFAULT NULL,
-  `duracaoCurso` time DEFAULT NULL,
-  `valorCurso` float(10,2) DEFAULT NULL,
+  `idCurso` int(11) NOT NULL AUTO_INCREMENT,
+  `idGrade` int(11) NOT NULL,
+  `nmCurso` varchar(60) NOT NULL,
+  `infoCurso_Simples` varchar(20) NOT NULL,
+  `infoCurso_Extensa` longtext,
   `imagCurso` varchar(100) DEFAULT NULL,
-  `idAula` int(11) NOT NULL
+  `dataCurso` date NOT NULL,
+  PRIMARY KEY (`idCurso`),
+  KEY `idGrade` (`idGrade`),
+  CONSTRAINT `curso_ibfk_1` FOREIGN KEY (`idGrade`) REFERENCES `grade_curso` (`idGrade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `dev`
---
-
-CREATE TABLE `dev` (
-  `idDev` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `nmDev` varchar(30) NOT NULL,
-  `acessoDev` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `emailusuario`
+-- Dumping data for table `curso`
 --
 
-CREATE TABLE `emailusuario` (
-  `emailUsuario` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+LOCK TABLES `curso` WRITE;
+/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estrutura da tabela `faz_usuario`
+-- Table structure for table `faz_curso`
 --
 
-CREATE TABLE `faz_usuario` (
-  `idFaz` int(11) NOT NULL,
-  `idBackup` int(11) NOT NULL,
+DROP TABLE IF EXISTS `faz_curso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faz_curso` (
+  `idFazCurso` int(11) NOT NULL AUTO_INCREMENT,
   `idUsuario` int(11) NOT NULL,
-  `emailloginUsuario` varchar(80) NOT NULL,
-  `dataFaz` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `gradecurso`
---
-
-CREATE TABLE `gradecurso` (
-  `gradeCurso` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `imagemblog`
---
-
-CREATE TABLE `imagemblog` (
-  `imagemBlog` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `localizar_devusuario`
---
-
-CREATE TABLE `localizar_devusuario` (
-  `idLocaliza` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `idDev` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailloginUsuario` varchar(80) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `dataLocaliza` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `musicablog`
---
-
-CREATE TABLE `musicablog` (
-  `musicaBlog` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `nivelusuario`
---
-
-CREATE TABLE `nivelusuario` (
-  `nivelUsuario` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `participar_usuariocurso`
---
-
-CREATE TABLE `participar_usuariocurso` (
-  `idParticipa` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `emailloginUsuario` varchar(80) NOT NULL,
-  `dataParticipa` date NOT NULL
+  `dataInscrição` date NOT NULL,
+  PRIMARY KEY (`idFazCurso`),
+  KEY `idUsuario` (`idUsuario`),
+  KEY `idCurso` (`idCurso`),
+  CONSTRAINT `faz_curso_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `faz_curso_ibfk_2` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `possuir_dev`
+-- Dumping data for table `faz_curso`
 --
 
-CREATE TABLE `possuir_dev` (
-  `idPossuir` int(11) NOT NULL,
-  `idDev` int(11) NOT NULL,
-  `idBlog` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `dataPossuir` date NOT NULL
+LOCK TABLES `faz_curso` WRITE;
+/*!40000 ALTER TABLE `faz_curso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `faz_curso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `grade_curso`
+--
+
+DROP TABLE IF EXISTS `grade_curso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `grade_curso` (
+  `idGrade` int(11) NOT NULL AUTO_INCREMENT,
+  `nmGrade` varchar(60) NOT NULL,
+  PRIMARY KEY (`idGrade`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `usuario`
+-- Dumping data for table `grade_curso`
 --
 
+LOCK TABLES `grade_curso` WRITE;
+/*!40000 ALTER TABLE `grade_curso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grade_curso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
-  `emailloginUsuario` varchar(80) NOT NULL,
-  `nmUsuario` varchar(80) NOT NULL,
-  `loginUsuario` varchar(80) NOT NULL,
-  `senhaUsuario` varchar(255) NOT NULL,
-  `dataUsuario` date NOT NULL
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nmUsuario` varchar(60) NOT NULL,
+  `emailUsuario` varchar(30) NOT NULL,
+  `senhaUsuario` varchar(20) NOT NULL,
+  PRIMARY KEY (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `ver_devcertificado`
+-- Dumping data for table `usuario`
 --
 
-CREATE TABLE `ver_devcertificado` (
-  `idVer` int(11) NOT NULL,
-  `idDev` int(11) NOT NULL,
-  `idCertificado` int(11) NOT NULL,
-  `CPFDev` int(11) NOT NULL,
-  `emailDev` varchar(60) NOT NULL,
-  `dataVer` date NOT NULL
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `video`
+--
+
+DROP TABLE IF EXISTS `video`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `video` (
+  `idVideo` int(11) NOT NULL AUTO_INCREMENT,
+  `idCurso` int(11) NOT NULL,
+  `urlVideo` varchar(50) NOT NULL,
+  `ordNume_Video` int(11) NOT NULL,
+  PRIMARY KEY (`idVideo`),
+  KEY `idCurso` (`idCurso`),
+  CONSTRAINT `video_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `videoblog`
---
-
-CREATE TABLE `videoblog` (
-  `videoBlog` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Estrutura da tabela `videocurso`
+-- Dumping data for table `video`
 --
 
-CREATE TABLE `videocurso` (
-  `videoCurso` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+LOCK TABLES `video` WRITE;
+/*!40000 ALTER TABLE `video` DISABLE KEYS */;
+/*!40000 ALTER TABLE `video` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Indexes for dumped tables
+-- Dumping events for database 'tech_train'
 --
 
 --
--- Indexes for table `acessar_devbackup`
+-- Dumping routines for database 'tech_train'
 --
-ALTER TABLE `acessar_devbackup`
-  ADD PRIMARY KEY (`idAcesso`),
-  ADD KEY `idDev` (`idDev`,`CPFDev`,`emailDev`),
-  ADD KEY `idBackup` (`idBackup`);
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indexes for table `aula`
---
-ALTER TABLE `aula`
-  ADD PRIMARY KEY (`idAula`);
-
---
--- Indexes for table `backup`
---
-ALTER TABLE `backup`
-  ADD PRIMARY KEY (`idBackup`);
-
---
--- Indexes for table `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`idBlog`);
-
---
--- Indexes for table `certificado`
---
-ALTER TABLE `certificado`
-  ADD PRIMARY KEY (`idCertificado`);
-
---
--- Indexes for table `controlar_devcurso`
---
-ALTER TABLE `controlar_devcurso`
-  ADD PRIMARY KEY (`idControla`),
-  ADD KEY `idCurso` (`idCurso`),
-  ADD KEY `idDev` (`idDev`,`CPFDev`,`emailDev`);
-
---
--- Indexes for table `curso`
---
-ALTER TABLE `curso`
-  ADD PRIMARY KEY (`idCurso`),
-  ADD KEY `idAula` (`idAula`);
-
---
--- Indexes for table `dev`
---
-ALTER TABLE `dev`
-  ADD PRIMARY KEY (`idDev`,`CPFDev`,`emailDev`);
-
---
--- Indexes for table `faz_usuario`
---
-ALTER TABLE `faz_usuario`
-  ADD PRIMARY KEY (`idFaz`),
-  ADD KEY `idBackup` (`idBackup`),
-  ADD KEY `idUsuario` (`idUsuario`,`emailloginUsuario`);
-
---
--- Indexes for table `localizar_devusuario`
---
-ALTER TABLE `localizar_devusuario`
-  ADD PRIMARY KEY (`idLocaliza`),
-  ADD KEY `idUsuario` (`idUsuario`,`emailloginUsuario`),
-  ADD KEY `idDev` (`idDev`,`CPFDev`,`emailDev`);
-
---
--- Indexes for table `participar_usuariocurso`
---
-ALTER TABLE `participar_usuariocurso`
-  ADD PRIMARY KEY (`idParticipa`),
-  ADD KEY `idCurso` (`idCurso`),
-  ADD KEY `idUsuario` (`idUsuario`,`emailloginUsuario`);
-
---
--- Indexes for table `possuir_dev`
---
-ALTER TABLE `possuir_dev`
-  ADD PRIMARY KEY (`idPossuir`),
-  ADD KEY `idDev` (`idDev`,`CPFDev`,`emailDev`),
-  ADD KEY `idBlog` (`idBlog`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`,`emailloginUsuario`);
-
---
--- Indexes for table `ver_devcertificado`
---
-ALTER TABLE `ver_devcertificado`
-  ADD PRIMARY KEY (`idVer`),
-  ADD KEY `idDev` (`idDev`,`CPFDev`,`emailDev`),
-  ADD KEY `idCertificado` (`idCertificado`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `acessar_devbackup`
---
-ALTER TABLE `acessar_devbackup`
-  MODIFY `idAcesso` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `aula`
---
-ALTER TABLE `aula`
-  MODIFY `idAula` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `backup`
---
-ALTER TABLE `backup`
-  MODIFY `idBackup` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `blog`
---
-ALTER TABLE `blog`
-  MODIFY `idBlog` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `certificado`
---
-ALTER TABLE `certificado`
-  MODIFY `idCertificado` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `controlar_devcurso`
---
-ALTER TABLE `controlar_devcurso`
-  MODIFY `idControla` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `curso`
---
-ALTER TABLE `curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `dev`
---
-ALTER TABLE `dev`
-  MODIFY `idDev` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `faz_usuario`
---
-ALTER TABLE `faz_usuario`
-  MODIFY `idFaz` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `localizar_devusuario`
---
-ALTER TABLE `localizar_devusuario`
-  MODIFY `idLocaliza` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `participar_usuariocurso`
---
-ALTER TABLE `participar_usuariocurso`
-  MODIFY `idParticipa` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `possuir_dev`
---
-ALTER TABLE `possuir_dev`
-  MODIFY `idPossuir` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `ver_devcertificado`
---
-ALTER TABLE `ver_devcertificado`
-  MODIFY `idVer` int(11) NOT NULL AUTO_INCREMENT;
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `acessar_devbackup`
---
-ALTER TABLE `acessar_devbackup`
-  ADD CONSTRAINT `acessar_devbackup_ibfk_1` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`),
-  ADD CONSTRAINT `acessar_devbackup_ibfk_2` FOREIGN KEY (`idBackup`) REFERENCES `backup` (`idBackup`);
-
---
--- Limitadores para a tabela `controlar_devcurso`
---
-ALTER TABLE `controlar_devcurso`
-  ADD CONSTRAINT `controlar_devcurso_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`),
-  ADD CONSTRAINT `controlar_devcurso_ibfk_2` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`);
-
---
--- Limitadores para a tabela `curso`
---
-ALTER TABLE `curso`
-  ADD CONSTRAINT `frk_aula_curso` FOREIGN KEY (`idAula`) REFERENCES `aula` (`idAula`);
-
---
--- Limitadores para a tabela `faz_usuario`
---
-ALTER TABLE `faz_usuario`
-  ADD CONSTRAINT `faz_usuario_ibfk_1` FOREIGN KEY (`idBackup`) REFERENCES `backup` (`idBackup`),
-  ADD CONSTRAINT `faz_usuario_ibfk_2` FOREIGN KEY (`idUsuario`,`emailloginUsuario`) REFERENCES `usuario` (`idUsuario`, `emailloginUsuario`);
-
---
--- Limitadores para a tabela `localizar_devusuario`
---
-ALTER TABLE `localizar_devusuario`
-  ADD CONSTRAINT `localizar_devusuario_ibfk_1` FOREIGN KEY (`idUsuario`,`emailloginUsuario`) REFERENCES `usuario` (`idUsuario`, `emailloginUsuario`),
-  ADD CONSTRAINT `localizar_devusuario_ibfk_2` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`);
-
---
--- Limitadores para a tabela `participar_usuariocurso`
---
-ALTER TABLE `participar_usuariocurso`
-  ADD CONSTRAINT `participar_usuariocurso_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`),
-  ADD CONSTRAINT `participar_usuariocurso_ibfk_2` FOREIGN KEY (`idUsuario`,`emailloginUsuario`) REFERENCES `usuario` (`idUsuario`, `emailloginUsuario`);
-
---
--- Limitadores para a tabela `possuir_dev`
---
-ALTER TABLE `possuir_dev`
-  ADD CONSTRAINT `possuir_dev_ibfk_1` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`),
-  ADD CONSTRAINT `possuir_dev_ibfk_2` FOREIGN KEY (`idBlog`) REFERENCES `blog` (`idBlog`);
-
---
--- Limitadores para a tabela `ver_devcertificado`
---
-ALTER TABLE `ver_devcertificado`
-  ADD CONSTRAINT `ver_devcertificado_ibfk_1` FOREIGN KEY (`idDev`,`CPFDev`,`emailDev`) REFERENCES `dev` (`idDev`, `CPFDev`, `emailDev`),
-  ADD CONSTRAINT `ver_devcertificado_ibfk_2` FOREIGN KEY (`idCertificado`) REFERENCES `certificado` (`idCertificado`);
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-11-17 18:40:50
