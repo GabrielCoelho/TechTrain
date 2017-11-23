@@ -15,5 +15,5 @@ $_ENV['config'] = [
     'host' => '127.0.0.1',
     'dbname' => 'tech_train',
     'user' => 'root',
-    'password' => 'root',
+    'password' => '',
 ];
