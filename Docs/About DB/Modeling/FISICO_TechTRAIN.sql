@@ -3,118 +3,65 @@
 
 
 
-CREATE TABLE Certificado (
-idCertificado Integer(11) PRIMARY KEY,
-nmCurso Varchar(30),
-cargaHorariaCurso Time,
-dataInicio Date,
-dataTermino Date
+CREATE TABLE Grade_Curso (
+idGrade Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+nmGrade Varchar(60) NOT NULL, 
+PRIMARY KEY (idGrade)
 );
 
-CREATE TABLE Backup (
-idBackup Integer(11) PRIMARY KEY,
-horaBackup Time,
-dataBackup Date,
-conteudoBackup LongText,
-assuntoBackup LongText
-);
-
-CREATE TABLE Dev (
-idDev Integer(11),
-CPFDev Integer(11),
-emailDev Varchar(60),
-nmDev Varchar(30),
-acessoDev LongText,
-PRIMARY KEY(idDev,CPFDev,emailDev)
-);
-
-CREATE TABLE Blog (
-idBlog Integer(11) PRIMARY KEY,
-assuntoBlog Varchar(255),
-dataBlog Date
-);
-
-CREATE TABLE Curso (
-idCurso Integer(11) PRIMARY KEY,
-idCertificado Integer(11),
-dataCadastro Date,
-duracaoCurso Time,
-nmCurso Varchar(80),
-infoCurso LongText,
-valorCurso FLOAT(10,2),
-imagCurso Varchar(80)
+CREATE TABLE Vídeo (
+idVideo Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+idCurso Integer(11) NOT NULL, 
+ordNume_Video Integer(11) DEFAULT NULL,
+urlVideo Varchar(50) DEFAULT NULL,
+PRIMARY KEY (idVideo)
 );
 
 CREATE TABLE Usuario (
-idUsuario Integer(11),
-emailloginUsuario Varchar(80),
-senhaUsuario VARCHAR(255),
-loginUsuario Varchar(80),
-nmUsuario Varchar(80),
-dataUsuario Date,
-PRIMARY KEY(idUsuario,emailloginUsuario)
+idUsuario Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+nmUsuario Varchar(60) NOT NULL,
+senhaUsuario Varchar(20) NOT NULL,
+emailUsuario Varchar(30) NOT NULL,
+PRIMARY KEY (idUsuario)
 );
 
-CREATE TABLE Musica_Blog (
-musicaBlog Varchar(255)
+CREATE TABLE Curso (
+idCurso Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+idGrade Integer(11) NOT NULL UNIQUE,
+nmCurso Varchar(60) NOT NULL,
+infoCurso_Simples Varchar(20) NOT NULL,
+infoCurso_Extensa LongText DEFAULT NULL,
+dataCurso Date NOT NULL,
+imagCurso Varchar(255) NOT NULL,
+PRIMARY kEY (idCurso),
+FOREIGN KEY(idGrade) REFERENCES Grade_Curso (idGrade)
 );
 
-CREATE TABLE Video_Blog (
-videoBlog Varchar(255)
+CREATE TABLE Professor (
+idProfessor Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+nmProfessor Varchar(60) NOT NULL,
+canalProfessor Varchar(255),
+PRIMARY KEY (idProfessor)
 );
 
-CREATE TABLE Imagem_Blog (
-imagemBlog Varchar(255)
-);
-
-CREATE TABLE Grade_Curso (
-gradeCurso Varchar(20)
-);
-
-CREATE TABLE Aula_Curso (
-aulaCurso Varchar(255)
-);
-
-CREATE TABLE Video_Curso (
-videoCurso Varchar(255)
-);
-
-CREATE TABLE Email_Usuario (
-emailUsuario Varchar(60)
-);
-
-CREATE TABLE Nivel_Usuario (
-nivelUsuario Boolean
-);
-
-CREATE TABLE Faz_Usuario (
-idFaz Integer(11) PRIMARY KEY,
-idBackup Integer(11),
-idUsuario Integer(11),
-emailloginUsuario Varchar(80),
-dataFaz Date,
-FOREIGN KEY(idBackup) REFERENCES Backup (idBackup),
-FOREIGN KEY(idUsuario,emailloginUsuario) REFERENCES Usuario (idUsuario,emailloginUsuario)
-);
-
-CREATE TABLE Participa_UsuarioCurso (
-idPasrticipa Integer(11) PRIMARY KEY,
-idUsuario Integer(11),
-emailloginUsuario Varchar(80),
-idCurso Integer(11),
-dataParticipa Date,
-FOREIGN KEY(idUsuario,emailloginUsuario) REFERENCES Usuario (idUsuario,emailloginUsuario),
+CREATE TABLE Ministra_Curso (
+idMiniCurso Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+idProfessor Integer(11) NOT NULL,
+idCurso Integer(11) NOT NULL,
+cargaHorariaCurso Time NOT NULL,
+PRIMARY KEY (idMiniCurso),
+FOREIGN KEY(idProfessor) REFERENCES Professor (idProfessor),
 FOREIGN KEY(idCurso) REFERENCES Curso (idCurso)
 );
 
-CREATE TABLE Possui_Dev (
-idPossui Integer(11) PRIMARY KEY,
-idDev Integer(11),
-emailDev Varchar(60),
-CPFDev Integer(11),
-idBlog Integer(11),
-dataPossui Date,
-FOREIGN KEY(idDev,CPFDev,emailDev) REFERENCES Dev (idDev,CPFDev,emailDev),
-FOREIGN KEY(idBlog) REFERENCES Blog (idBlog)
+CREATE TABLE Faz_Curso (
+idFazCurso Integer(11) NOT NULL AUTO_INCREMENT UNIQUE,
+idCurso Integer(11) NOT NULL,
+idUsuario Integer(11) NOT NULL,
+dataInscrição Date NOT NULL,
+PRIMARY KEY (idFazCurso),
+FOREIGN KEY(idCurso) REFERENCES Curso (idCurso),
+FOREIGN KEY(idUsuario) REFERENCES Usuario (idUsuario)
 );
 
+ALTER TABLE Vídeo ADD FOREIGN KEY(idCurso) REFERENCES Curso (idCurso)
