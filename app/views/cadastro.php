@@ -18,15 +18,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="date" class="form-control" name="dtNasc" placeholder="Data de nascimento">
-                </div>
-
-                <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" name="userName" placeholder="Nome de Usuário">
                 </div>
 
                 <div class="form-group">

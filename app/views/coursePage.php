@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <img class="img-responsive img-rounded" src="./public/<?= $dados['imagCurso'] ?>" alt="Imagem" >
+        <img class="teste" src="./public/<?= $dados['imagCurso'] ?>" alt="Imagem" >
         <!-- Aqui teremos a imagem do curso de tamanho maior que na rota /courses -->
       </div>
     </div>
@@ -24,17 +24,17 @@
 
     <aside class="signupCourse course_5">
       <div class="col-xs-12">
-        <img src="./public/images/d.jpg" alt="Professor do Curso" class="img-responsive img-circle" style="margin-left: 30px;">
+        <img src="./public/<?=$dados['curso_Prof']['fotoProfessor']?>" alt="Professor do Curso" class="img-responsive img-circle" style="margin-left: 30px;">
       </div>
       <hr class="style18">
       <ul>
-        <li><strong>Nome: </strong> João Rubens</li>
-        <li><strong>Canal: </strong> <a href="https://www.youtube.com/channel/UCeLVLkSv831fCGFZmRaPnQQ">Professor Binho</a></li>
-        <li><strong>Duração do Curso: </strong> 20 Horas</li>
+        <li><strong>Professor: </strong> <?= $dados['curso_Prof']['nmProfessor'] ?></li>
+        <li><strong>Canal: </strong> <a href="<?=$dados['curso_Prof']['linkCanalProf']?>"><?= $dados['curso_Prof']['canalProfessor'] ?></a></li>
+        <li><strong>Duração do Curso: </strong> <?= $dados['curso_Prof']['cargaHorariaCurso'] ?></li>
         <li><strong>Certificado ao final: </strong> Não</li>
       </ul>
       <hr class="style18">
-      <button type="button" class="btn btn-success btn-lg btn-block" name="button"><a href="/courseVideo?id=<?= $_SESSION['idCourse']?>"> Ir ao curso!</a></button>
+      <form method="get" action="/courseVideo?id=<?= $_SESSION['idCourse']?>"><button type="submit" class="btn btn-success btn-lg btn-block" name="button" > Ir ao curso!</button></form>
     </aside>
 
     <div class="row margeada">

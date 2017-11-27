@@ -14,6 +14,19 @@
             .image-teste{
                 width: 200px;
                 height: 200px;
+
+            }
+            .teste{
+                width: 1280px;
+                height: 753px;
+                
+            }
+            .custom-file-control:lang(en)::after {
+            content: "Choose file...";
+            }
+
+            .custom-file-control:lang(en)::before {
+            content: "Browse";
             }
         </style>
     </head>
@@ -58,7 +71,7 @@
                                                                 <a href="/myCourses"><h5>Meus Cursos</h5></a>
                                                                 <a href="/notify"><h5>Notificações</h5></a>
                                                                 <hr>
-                                                                <a href="/createCourse"><h5>Criar um Curso</h5></a>
+                                                                <a href="/createCourseView"><h5>Criar um Curso</h5></a>
                                                                 <a href="/panelTeacher"><h5>Painel de Professor</h5></a>
                                                                 <a href="/editTeacher"><h5>Perfil Instrutor</h5></a>
                                                                 <hr>

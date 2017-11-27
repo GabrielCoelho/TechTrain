@@ -42,9 +42,8 @@
                             <h2><?= $cursos['nomeCurso'] ?></h2>
                             
                             <!-- Aqui vem uma imagem. Precisa de um campo no banco de dados para adicionar a imagem -->
-                            
-                            <p><?= $cursos['infoCurso_Simples'] ?></p>
-                            <img class="image-teste" src="./public/<?= $cursos['imagCurso'] ?>" >
+                           <p><?= $cursos['infoCurso_Simples'] ?></p>
+                            <img class="image-teste" src="<?= $cursos['imagCurso'] ?>" >
                             <p><?= $cursos['dataCurso'] ?></p>
                             <p><a href="/coursePage?id=<?= $cursos['idCurso']?>" class="btn btn-success btn-xs">Veja mais sobre o curso</a></p> Poderia ser um modal que abrisse para mostrar o curso
                         </div>

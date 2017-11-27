@@ -14,7 +14,7 @@
             <?php foreach($dados as $d){ ?>
             
                 <div class="row">
-                    <h2 style="font-weight: bold; color: black;"><?= $d['nmGrade'] ?></h2>
+                    <h2 style="font-weight: bold; color: black;"><?= $d['nmCategoria'] ?></h2>
                 </div>
 
                 <div class="row course_2">
