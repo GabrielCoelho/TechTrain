@@ -35,14 +35,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="categoria" class="label-default">CATEGORIA</label>
-                    <select class="form-control" name="categoria">
-                    <option>INFORMATICA</option>
-                    <option>ADMINISTRAÇÃO</option>
-                    <option>ARTE</option>
-                    </select>
+                <label for="idCat" class="label-default">Categoria</label>
+                <select name="idCat" class="form-control">
+                        <?php foreach($cat as $c) {  ?>
+                            <option value="<?= $c['idCategoria'] ?>"><?= $c['nmCategoria'] ?></option>
+                        <?php } ?>
+                </select>                
                 </div>
-                 <div class="form-group">
+                
+                <div class="form-group">
                     <input type="date" class="form-control" name="data" placeholder="Data">
                 </div>
 

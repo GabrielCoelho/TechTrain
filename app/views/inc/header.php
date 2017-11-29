@@ -21,6 +21,13 @@
                 height: 753px;
                 
             }
+
+            .Tpicture{
+                width: 250px;
+                height: 250px;
+                
+            }            
+
             .custom-file-control:lang(en)::after {
             content: "Choose file...";
             }
@@ -48,8 +55,8 @@
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="<?= $uri == '/' ? 'active' : ''  ?>"><a href="/">Home</a></li>
                                     <li class="curso <?= $uri == '/courses' ? 'active' : ''  ?>"  role="presentation"><a href="/courses">Cursos</a></li>
-                                    <li class="blog <?= $uri == '/blog' ? 'active' : ''  ?>" role="presentation"><a href="/blog">Blog</a></li>
-                                    <li class="cert <?= $uri == '/certify' ? 'active' : ''  ?>" role="presentation"><a href="/certify">Certificados</a></li>
+                                    <li class="blog <?= $uri == '#' ? 'active' : ''  ?>" role="presentation"><a href="#">Blog</a></li>
+                                    <li class="cert <?= $uri == '#' ? 'active' : ''  ?>" role="presentation"><a href="#">Certificados</a></li>
                                     <!--Verifica se o usuário não está logado-->
                                     <?php 
                                        if (isset($_SESSION['logged']) && $_SESSION['logged']){

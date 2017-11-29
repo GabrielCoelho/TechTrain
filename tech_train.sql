@@ -1,257 +1,295 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1    Database: tech_correto
--- ------------------------------------------------------
--- Server version	5.7.20-log
+-- Host: 127.0.0.1
+-- Generation Time: 28-Nov-2017 às 18:37
+-- Versão do servidor: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `canalprofessor`
+-- Database: `tech_train`
 --
 
-DROP TABLE IF EXISTS `canalprofessor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `canalprofessor` (
-  `canalProfessor` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `canalprofessor`
+-- Estrutura da tabela `categorias`
 --
 
-LOCK TABLES `canalprofessor` WRITE;
-/*!40000 ALTER TABLE `canalprofessor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `canalprofessor` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `categorias`
---
-
-DROP TABLE IF EXISTS `categorias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categorias` (
-  `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
-  `nmCategoria` varchar(60) NOT NULL,
-  PRIMARY KEY (`idCategoria`),
-  UNIQUE KEY `idCategoria` (`idCategoria`),
-  UNIQUE KEY `nmCategoria` (`nmCategoria`)
+  `idCategoria` int(11) NOT NULL,
+  `nmCategoria` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categorias`
+-- Extraindo dados da tabela `categorias`
 --
 
-LOCK TABLES `categorias` WRITE;
-/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `categorias` (`idCategoria`, `nmCategoria`) VALUES
+(1, 'INFORMÁTICA'),
+(2, 'ADMINISTRAÇÃO'),
+(3, 'ARTE');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `curso`
+-- Estrutura da tabela `cursos`
 --
 
-DROP TABLE IF EXISTS `curso`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `curso` (
-  `idCurso` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cursos` (
+  `idCurso` int(11) NOT NULL,
   `idCategoria` int(11) NOT NULL,
   `nmCurso` varchar(60) NOT NULL,
   `infoCurso_Simples` varchar(20) NOT NULL,
-  `infoCurso_Extensa` longtext,
+  `infoCurso_Extensa` longtext NOT NULL,
   `dataCurso` date NOT NULL,
-  `imagCurso` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idCurso`),
-  UNIQUE KEY `idCurso` (`idCurso`),
-  UNIQUE KEY `idCategoria` (`idCategoria`),
-  UNIQUE KEY `nmCurso` (`nmCurso`),
-  CONSTRAINT `curso_ibfk_1` FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`idCategoria`)
+  `imagCurso` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `curso`
+-- Extraindo dados da tabela `cursos`
 --
 
-LOCK TABLES `curso` WRITE;
-/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `cursos` (`idCurso`, `idCategoria`, `nmCurso`, `infoCurso_Simples`, `infoCurso_Extensa`, `dataCurso`, `imagCurso`) VALUES
+(1, 1, 'PHP do basico ao avan&ccedil;ado', 'Sistemas para Web', 'Se voc&ecirc; est&aacute; em d&uacute;vida sobre aprender a programar, ou qual linguagem aprender, neste curso algumas informa&ccedil;&otilde;es bem interessantes sobre PHP, bem como algumas vantagens e desvantagens da linguagem s&atilde;o trazidas. O usu&aacute;rio saber&aacute; tamb&eacute;m os conceitos da web inclusivo o que &eacute; o PHP, e import&acirc;ncia desta linguagem de programa&ccedil;&atilde;o no mercado.', '2017-11-28', '/img/php_ba.jpg'),
+(2, 2, '&Eacute;TICA EMPRESARIAL', 'Etica empresarial', 'A &eacute;tica empresarial &eacute; o ramo da &eacute;tica diretamente ligado &agrave;s empresas, que &eacute; referente &agrave; conduta &eacute;tica das empresas, ou seja, &agrave; forma moralmente correta com que as empresas interagem com o seu meio envolvente.', '2017-11-28', '/img/etica.jpg');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `faz_curso`
+-- Estrutura da tabela `faz_curso`
 --
 
-DROP TABLE IF EXISTS `faz_curso`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `faz_curso` (
-  `idFazCurso` int(11) NOT NULL AUTO_INCREMENT,
+  `idFazCurso` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
-  `dataInscricao` date NOT NULL,
-  PRIMARY KEY (`idFazCurso`),
-  UNIQUE KEY `idFazCurso` (`idFazCurso`),
-  UNIQUE KEY `idUsuario` (`idUsuario`),
-  UNIQUE KEY `idCurso` (`idCurso`),
-  UNIQUE KEY `dataInscricao` (`dataInscricao`),
-  CONSTRAINT `FK_UsuarioFaz_Curso` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
-  CONSTRAINT `faz_curso_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`)
+  `dataInscricao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `faz_curso`
+-- Estrutura da tabela `ministra_curso`
 --
 
-LOCK TABLES `faz_curso` WRITE;
-/*!40000 ALTER TABLE `faz_curso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `faz_curso` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `ministra_curso`
---
-
-DROP TABLE IF EXISTS `ministra_curso`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ministra_curso` (
-  `idMiniCurso` int(11) NOT NULL AUTO_INCREMENT,
+  `idMiniCurso` int(11) NOT NULL,
   `idProfessor` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
-  `cargaHorariaCurso` time NOT NULL,
-  PRIMARY KEY (`idMiniCurso`),
-  UNIQUE KEY `idMiniCurso` (`idMiniCurso`),
-  UNIQUE KEY `idProfessor` (`idProfessor`),
-  UNIQUE KEY `idCurso` (`idCurso`),
-  UNIQUE KEY `cargaHorariaCurso` (`cargaHorariaCurso`),
-  CONSTRAINT `FK_CursoMinistra_Curso` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`),
-  CONSTRAINT `FK_ProfessorMinistra_Curso` FOREIGN KEY (`idProfessor`) REFERENCES `professor` (`idProfessor`)
+  `cargaHorariaCurso` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ministra_curso`
+-- Extraindo dados da tabela `ministra_curso`
 --
 
-LOCK TABLES `ministra_curso` WRITE;
-/*!40000 ALTER TABLE `ministra_curso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ministra_curso` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `ministra_curso` (`idMiniCurso`, `idProfessor`, `idCurso`, `cargaHorariaCurso`) VALUES
+(1, 1, 1, '06:00:00'),
+(2, 2, 2, '09:00:00');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `professor`
+-- Estrutura da tabela `professor`
 --
 
-DROP TABLE IF EXISTS `professor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `professor` (
-  `idProfessor` int(11) NOT NULL AUTO_INCREMENT,
+  `idProfessor` int(11) NOT NULL,
   `nmProfessor` varchar(60) NOT NULL,
-  PRIMARY KEY (`idProfessor`),
-  UNIQUE KEY `idProfessor` (`idProfessor`),
-  UNIQUE KEY `nmProfessor` (`nmProfessor`)
+  `fotoProfessor` varchar(30) DEFAULT NULL,
+  `canalProfessor` varchar(100) NOT NULL,
+  `linkCanalProf` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `professor`
+-- Extraindo dados da tabela `professor`
 --
 
-LOCK TABLES `professor` WRITE;
-/*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `professor` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `professor` (`idProfessor`, `nmProfessor`, `fotoProfessor`, `canalProfessor`, `linkCanalProf`) VALUES
+(1, 'João Rubens Filho', '/images/d.jpg', 'Professor Binho', 'https://www.youtube.com/channel/UCeLVLkSv831fCGFZmRaPnQQ'),
+(2, ' Tiago', '/images/13.jpg', 'ÉTICA EMPRESARIAL', 'https://www.youtube.com/playlist?list=PLD6mqlYl8U15hJa8FbdhP6cxJYVXioWop');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nmUsuario` varchar(60) NOT NULL,
-  `senhaUsuario` varchar(20) NOT NULL,
-  `emailUsuario` varchar(30) NOT NULL,
-  PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY `idUsuario` (`idUsuario`),
-  UNIQUE KEY `nmUsuario` (`nmUsuario`),
-  UNIQUE KEY `senhaUsuario` (`senhaUsuario`),
-  UNIQUE KEY `emailUsuario` (`emailUsuario`)
+  `idUsuario` int(11) NOT NULL,
+  `nmUsuario` varchar(100) NOT NULL,
+  `senhaUsuario` varchar(100) NOT NULL,
+  `emailUsuario` varchar(1000) CHARACTER SET utf32 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `usuario` (`idUsuario`, `nmUsuario`, `senhaUsuario`, `emailUsuario`) VALUES
+(1, 'Admin', '12wGaKkN1hGuw', 'admin@email.com');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Estrutura da tabela `video`
 --
 
-DROP TABLE IF EXISTS `video`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `video` (
-  `idVideo` int(11) NOT NULL AUTO_INCREMENT,
+  `idVideo` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
-  `ordNume_Video` int(11) NOT NULL,
-  `urlVideo` varchar(255) NOT NULL,
-  PRIMARY KEY (`idVideo`),
-  UNIQUE KEY `idVideo` (`idVideo`),
-  KEY `FK_CursoVideo` (`idCurso`),
-  CONSTRAINT `FK_CursoVideo` FOREIGN KEY (`idCurso`) REFERENCES `curso` (`idCurso`)
+  `tituloVideo` varchar(50) NOT NULL,
+  `urlVideo` varchar(50) NOT NULL,
+  `descricaoVideo` text NOT NULL,
+  `duracaoVideo` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `video`
+-- Extraindo dados da tabela `video`
 --
 
-LOCK TABLES `video` WRITE;
-/*!40000 ALTER TABLE `video` DISABLE KEYS */;
-/*!40000 ALTER TABLE `video` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `video` (`idVideo`, `idCurso`, `tituloVideo`, `urlVideo`, `descricaoVideo`, `duracaoVideo`) VALUES
+(1, 1, 'Vale a Pena aprender PHP?', 'https://www.youtube.com/watch?v=9HEcscFY_oI', 'Neste v&iacute;deo eu trago informa&ccedil;&otilde;es bem interessantes sobre PHP, bem como algumas vantagens e desvantagens da linguagem!', '00:07:56'),
+(2, 1, 'Arrays em PHP - Introdu&ccedil;&atilde;o e princip', 'https://www.youtube.com/watch?v=qhLskEIxd2Q', 'Arrays em PHP s&atilde;o muito importantes para manipular dados. Neste v&iacute;deo, eu apresento alguns truques importantes com arrays, como diferenciar arrays associados e indexados, array_map, array_filter.', '00:14:00'),
+(3, 1, 'Spaceship Operator - PHP 7', 'https://www.youtube.com/watch?v=dvB4SwjTbCg', 'J&aacute; ouviu falar no operador Spaceship? Ent&atilde;o se liga neste exemplo que vou apresentar utilizando o spaceship. Vamos criar uma classe de cliente e uma classe que fornece um m&eacute;todo de ordena&ccedil;&atilde;o customizado para clientes!', '00:10:00'),
+(4, 2, '&Eacute;tica - Neg&oacute;cios e Vida', 'https://www.youtube.com/watch?v=iij2DCvgELg&amp;in', '&Eacute;tica - Neg&oacute;cios e Vida', '00:26:00'),
+(5, 2, 'Introdu&ccedil;&atilde;o &agrave; TGA - Cap. 17', 'https://www.youtube.com/watch?v=i_9-9p-qFCU&amp;in', '&Eacute;tica e responsabilidade das organiza&ccedil;&otilde;es', '00:10:00');
 
 --
--- Dumping events for database 'tech_correto'
+-- Indexes for dumped tables
 --
 
 --
--- Dumping routines for database 'tech_correto'
+-- Indexes for table `categorias`
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`idCategoria`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for table `cursos`
+--
+ALTER TABLE `cursos`
+  ADD PRIMARY KEY (`idCurso`),
+  ADD KEY `idCategoria` (`idCategoria`);
+
+--
+-- Indexes for table `faz_curso`
+--
+ALTER TABLE `faz_curso`
+  ADD PRIMARY KEY (`idFazCurso`),
+  ADD KEY `idUsuario` (`idUsuario`,`idCurso`),
+  ADD KEY `fc_ibfk_1` (`idCurso`);
+
+--
+-- Indexes for table `ministra_curso`
+--
+ALTER TABLE `ministra_curso`
+  ADD PRIMARY KEY (`idMiniCurso`),
+  ADD KEY `idProfessor` (`idProfessor`,`idCurso`),
+  ADD KEY `mc_ibfk_1` (`idCurso`);
+
+--
+-- Indexes for table `professor`
+--
+ALTER TABLE `professor`
+  ADD PRIMARY KEY (`idProfessor`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`idVideo`),
+  ADD KEY `idCurso` (`idCurso`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `cursos`
+--
+ALTER TABLE `cursos`
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `faz_curso`
+--
+ALTER TABLE `faz_curso`
+  MODIFY `idFazCurso` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ministra_curso`
+--
+ALTER TABLE `ministra_curso`
+  MODIFY `idMiniCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `professor`
+--
+ALTER TABLE `professor`
+  MODIFY `idProfessor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+  MODIFY `idVideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `cursos`
+--
+ALTER TABLE `cursos`
+  ADD CONSTRAINT `cursos_ibfk_1` FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`idCategoria`);
+
+--
+-- Limitadores para a tabela `faz_curso`
+--
+ALTER TABLE `faz_curso`
+  ADD CONSTRAINT `fc_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `cursos` (`idCurso`),
+  ADD CONSTRAINT `fc_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+
+--
+-- Limitadores para a tabela `ministra_curso`
+--
+ALTER TABLE `ministra_curso`
+  ADD CONSTRAINT `mc_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `cursos` (`idCurso`),
+  ADD CONSTRAINT `mc_ibfk_2` FOREIGN KEY (`idProfessor`) REFERENCES `professor` (`idProfessor`);
+
+--
+-- Limitadores para a tabela `video`
+--
+ALTER TABLE `video`
+  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`idCurso`) REFERENCES `cursos` (`idCurso`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2017-11-26  2:54:27

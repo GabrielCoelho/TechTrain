@@ -22,11 +22,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Vtitulo" placeholder="Digite o titúlo do vídeo" />
+                    <input type="text" class="form-control" name="Vtitulo" placeholder="Digite o titúlo do vídeo" required/>
                 </div>
 
                  <div class="form-group">
-                    <input type="text" class="form-control" name="Vurl" placeholder="URL ou link do vídeo">
+                    <input type="text" class="form-control" name="Vurl" placeholder="URL ou link do vídeo"required>
                 </div>
 
                 <div class="form-group">

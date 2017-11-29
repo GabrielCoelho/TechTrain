@@ -37,12 +37,13 @@ class CourseController
      //selecionando o banco de dados
     $db = mysqli_select_db($cx, "tech_train");   
     //criando a query de consulta à tabela criada 
-    $sql = mysqli_query($cx, "select professor.nmProfessor, professor.fotoProfessor,professor.linkCanalProf, professor.canalProfessor, ministra_curso.cargaHorariaCurso, cursos.idCurso from ministra_curso
+    $sql = mysqli_query($cx, "select professor.nmProfessor, professor.fotoProfessor,professor.linkCanalProf,
+    professor.canalProfessor, ministra_curso.cargaHorariaCurso, cursos.idCurso from ministra_curso
     inner join professor
     on ministra_curso.idProfessor = professor.idProfessor
     inner join cursos
     on ministra_curso.idCurso = cursos.idCurso
-    WHERE cursos.idCurso ="  .$_SESSION['idCourse'].";  ") or die( mysqli_error($cx) //caso haja um erro na consulta 
+    WHERE cursos.idCurso = "  .$_SESSION['idCourse'].";  ") or die( mysqli_error($cx) //caso haja um erro na consulta
     );
 
     $dados['curso_Prof'] = mysqli_fetch_assoc($sql);
@@ -54,13 +55,17 @@ class CourseController
   }
 
   
+
+
   public function courseCreateView()
   {
     
     $flash = Flash::getFlash();
     $q = new QueryBuilder();
     $professor = $q->select('professor', []);
-    //print_r($professor); die();  
+
+    $cat = $q->select('categorias', []);
+    //print_r($cat); die();  
     require './app/views/createCourse.php';
     
   }
@@ -71,11 +76,10 @@ class CourseController
       $dados['infoCurso_Simples'] = htmlentities($_POST['infoCurso_Simples'], ENT_QUOTES);
       $dados['infoCurso_Extensa'] = htmlentities($_POST['infoCurso_Extensa'], ENT_QUOTES);
       $dados['dataCurso'] = htmlentities($_POST['data'], ENT_QUOTES);
-      $nmCategoria=$_POST['categoria'];
-
+      $dados['idCategoria'] = $_POST['idCat'] ;
       
-      //die(var_dump($_POST));
-      switch ($nmCategoria) {
+      //die(var_dump($dados));
+      /*switch ($nmCategoria) {
         case 'INFORMATICA':
             $dados['idCategoria'] = 4;
             break;
@@ -87,7 +91,8 @@ class CourseController
             break;
         default:
            echo '';
-    }
+           
+    }*/
       //Não funcionou esse trecho de código comentado
 
       /*if($nmCategoria = 'ARTE'):
@@ -138,9 +143,13 @@ class CourseController
       $dados['descricaoVideo'] = htmlentities($_POST['Vdescricao'], ENT_QUOTES);
       $dados['duracaoVideo'] = htmlentities($_POST['Vduracao'], ENT_QUOTES);
       $dados['idCurso'] = htmlentities($_POST['idCurso'], ENT_QUOTES);
-      //var_dump($dados['idCurso']); die();
-  }    
 
+      //var_dump($dados['idCurso']); die();
+      $q = new QueryBuilder();
+      $q->insert('video', $dados);
+
+      header('location: /courses');
+  }    
   public function watchVideo()
   {
     

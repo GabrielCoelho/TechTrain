@@ -24,7 +24,7 @@
 
     <aside class="signupCourse course_5">
       <div class="col-xs-12">
-        <img src="./public/<?=$dados['curso_Prof']['fotoProfessor']?>" alt="Professor do Curso" class="img-responsive img-circle" style="margin-left: 30px;">
+        <img src="./public/<?=$dados['curso_Prof']['fotoProfessor']?>" alt="Professor do Curso" class="img-responsive img-circle" width="250" height="250" style="margin-left: 30px;">
       </div>
       <hr class="style18">
       <ul>

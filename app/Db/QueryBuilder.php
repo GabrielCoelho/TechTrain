@@ -85,7 +85,7 @@ class QueryBuilder
     }
 
     public function editFullName(){
-        $sql = "UPDATE usuario SET nomeUsuario = :valor1 WHERE idUsuario = :valor2";
+        $sql = "UPDATE usuario SET nmUsuario = :valor1 WHERE idUsuario = :valor2";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':valor1', $_POST['fullName']);
         $stmt->bindParam(':valor2', $_SESSION['id']);
@@ -113,7 +113,7 @@ class QueryBuilder
     }
     public function changeEmail(){
         if(isset($_POST['changeEmail'])){
-        $sql = "UPDATE usuario SET emailloginUsuario = :valor1 WHERE idUsuario = :valor2";
+        $sql = "UPDATE usuario SET emailUsuario = :valor1 WHERE idUsuario = :valor2";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':valor1', $_POST['changeEmail']);
         $stmt->bindParam(':valor2', $_SESSION['id']);
@@ -133,6 +133,7 @@ class QueryBuilder
         if ($_SESSION['senha'] !== $_POST['oldPass']) {
             Flash::setFlash('Senha incorreta');
             header('Location: /editProfile');
+            die(var_dump($_POST['oldPass']));
     
         }
 
